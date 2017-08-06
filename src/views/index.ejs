@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dylan Tobia</title>
+    <!--bower:css-->
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <!--endbower-->
+    <!--inject:css-->
+    <link rel="stylesheet" href="/css/main.css">
+    <!--endinject-->
+
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+<!-- Menu -->
+<nav class="menu" id="theMenu">
+    <div class="menu-wrap">
+        <h1 class="logo"><a href="index.ejs#home">Dylan Tobia</a></h1>
+        <i class="icon-remove menu-close"></i>
+        <a href="#home" class="smoothScroll">Home</a>
+        <a href="#about" class="smoothScroll">About</a>
+        <a href="#projects" class="smoothScroll">Projects</a>
+        <a href="#contact" class="smoothScroll">Contact</a>
+    </div>
+
+    <!-- Menu button -->
+    <div id="menuToggle"><i id="toggleIcon" class="fa fa-caret-left"></i></div>
+</nav>
+
+
+<!-- ========== HEADER SECTION ========== -->
+<section id="home" name="home"></section>
+<div id="headerwrap">
+    <div class="container">
+        <div class="logo">
+            <img src="/images/logo.png"><!-- TODO: change this -->
+        </div>
+        <br>
+        <div class="row">
+            <h1>Dylan Tobia</h1>
+            <br>
+            <h3>Software Engineer</h3>
+            <div class="col-lg-6 col-lg-offset-3">
+            </div>
+        </div>
+    </div><!-- /container -->
+</div><!-- /headerwrap -->
+
+
+<!-- ========== ABOUT SECTION ========== -->
+<section id="about" name="about"></section>
+<div id="f">
+    <div class="container">
+        <div class="row">
+            <h3>ABOUT ME</h3>
+            <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
+                        class="icon icon-circle"></i></p>
+
+            <!-- INTRO INFORMATIO-->
+            <div class="col-lg-6 col-lg-offset-3">
+                <p>Full time University of Arizona Computer Science major, with</p>
+                <p> experience working in the field. Knowledge web-development, Java, and</p>
+                <p> other languages.</p>
+                <p>My <a href="https://github.com/djtobia">Github</a></p>
+                <p>My <a href="https://www.linkedin.com/in/dylan-tobia-179508126">Linked In</a></p>
+                <p>I'm always looking for new opportunities.</p>
+                <p>
+                    <a href="/about/">
+                        <button type="button" class="btn btn-warning">More About Me</button>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div><!-- /container -->
+</div><!-- /f -->
+
+
+<!-- ========== CAROUSEL SECTION ========== -->
+<section id="projects" name="projects"></section>
+<div id="f">
+    <div class="container">
+        <div class="row centered">
+            <h3>SOME PROJECTS</h3>
+            <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
+                        class="icon icon-circle"></i></p>
+
+            <div class="col-lg-6 col-lg-offset-3">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                        <div class="item active centered">
+                            <% var i = 0; %>
+                            <h3><%= projects[i].name %></h3>
+                            <p><%= projects[i].desc %></p>
+                            <a href="/projects/<%= projects[i]._id %>">More Information</a><br/>
+                            <a href="<%= projects[i].link %>">Github Repository</a> <br/> <br/>
+                            <%- images[i] %>
+                            <br/>
+                            <br/>
+                            <% i++; %>
+                        </div>
+                        <div class="item centered">
+                            <h3><%= projects[i].name %></h3>
+                            <p><%= projects[i].desc %></p>
+                            <a href="/projects/<%= projects[i]._id %>">More Information</a><br/>
+                            <a href="<%= projects[i].link %>">Github Repository</a>
+                            <br/><br/>
+                            <%- images[i] %>
+                            <br/>
+                            <br/>
+                            <% i++; %>
+                        </div>
+                        <div class="item centered">
+                            <h3><%= projects[i].name %></h3>
+                            <p><%= projects[i].desc %></p>
+                            <a href="/projects/<%= projects[i]._id %>">More Information</a><br/>
+                            <a href="<%= projects[i].link %>">Github Repository</a>
+                            <br/><br/>
+                            <%- images[i] %>
+                            <br/>
+                            <br/>
+                            <% i++; %>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                </div>
+                <a href="\projects">
+                    <button class="btn btn-warning"> More Projects</button>
+                </a>
+            </div><!-- col-lg-8 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>    <!-- f -->
+
+<!-- ========== CONTACT SECTION ========== -->
+<section id="contact" name="contact"></section>
+<div id="f">
+    <div class="container">
+        <div class="row">
+            <h3>CONTACT ME</h3>
+            <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
+                        class="icon icon-circle"></i></p>
+
+            <div class="col-lg-6 col-lg-offset-3">
+                <p>1915 W. Riverview, St.<br/>Tucson, Arizona, 85745<br/>520-278-9172</p>
+                <p>djtobia@gmail.com</p>
+                <p>
+                    <button type="button" class="btn btn-warning">Contact</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--bower:js-->
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<!--endbower-->
+
+
+<!--inject:js-->
+<script src="/js/classie.js"></script>
+<script src="/js/contact.js"></script>
+<script src="/js/insertProjectApp.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/smoothscroll.js"></script>
+<!--endinject-->
+
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Projects By Dylan Tobia</title>
+    <!--bower:css-->
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <!--endbower-->
+    <!--inject:css-->
+    <link rel="stylesheet" href="/css/main.css">
+    <!--endinject-->
+
+
+    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+<!-- Menu -->
+<nav class="menu" id="theMenu">
+    <div class="menu-wrap">
+        <h1 class="logo"><a href="index.ejs#home">Projects</a></h1>
+        <i class="icon-remove menu-close"></i>
+        <a href="\">Home</a>
+        <a href="#about" class="smoothScroll">About</a>
+        <a href="#projects" class="smoothScroll">Projects</a>
+        <a href="#contact" class="smoothScroll">Contact</a>
+    </div>
+
+    <!-- Menu button -->
+    <div id="menuToggle"><i id="toggleIcon" class="fa fa-caret-left"></i></div>
+</nav>
+
+
+<!-- ========== HEADER SECTION ========== -->
+<section id="home" name="home"></section>
+<div id="headerwrap">
+    <div class="container">
+        <div class="logo">
+            <img src="/images/logo.png">
+        </div>
+        <br>
+        <div class="row">
+            <h1>Projects</h1>
+            <br>
+            <h3>Some of my Projects</h3>
+            <div class="col-lg-6 col-lg-offset-3">
+            </div>
+        </div>
+    </div><!-- /container -->
+</div><!-- /headerwrap -->
+
+
+<section id="projects" name="projects"></section>
+<div id="f">
+    <div class="container">
+        <div class="row centered">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h3><%= project.name %></h3><br/>
+                <p><%= project.longDesc %></p>
+                <a href="<%= project.link %>">Github Repository</a><br/><br />
+                <img class="<%= project.fileName ? "projectImage" : "noImage" %>"
+                     src="<%= "/images/"+project.fileName %>"/><br/>
+            </div><!-- col-lg-8 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>    <!-- f -->
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--bower:js-->
+<script src="/lib/jquery/dist/jquery.js"></script>
+<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/lib/angular/angular.js"></script>
+<!--endbower-->
+
+
+<!--inject:js-->
+<script src="/js/classie.js"></script>
+<script src="/js/contact.js"></script>
+<script src="/js/insertProjectApp.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/smoothscroll.js"></script>
+<!--endinject-->
+
+
+</body>
+</html>

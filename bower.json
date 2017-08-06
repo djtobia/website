@@ -1,0 +1,43 @@
+{
+  "name": "website",
+  "description": "Website for my resume",
+  "main": "app.js",
+  "authors": [
+    "Dylan Tobia"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular": "^1.6.5"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/js/bootstrap.js",
+        "dist/css/bootstrap.min.css",
+        "dist/css/bootstrap-theme.css"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "less/font-awesome.less",
+        "css/font-awesome.min.css",
+        "scss/font-awesome.scss"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "dist/jquery.js"
+      ]
+    }
+  }
+}
