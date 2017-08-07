@@ -8,7 +8,7 @@ adminRouter.route('/addProject')
         res.render('insertProject');
     })
     .post(function (req, res) {
-        var url = 'mongodb://localhost:27017/website';
+        var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
         console.log(req.body);
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('projects');

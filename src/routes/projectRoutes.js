@@ -6,7 +6,7 @@ var router = express.Router();
 
 router.route('/')
     .get(function (req, res) {
-        var url = 'mongodb://localhost:27017/website';
+        var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('projects');
 
@@ -19,7 +19,7 @@ router.route('/')
 router.route('/:id')
     .get(function (req, res) {
         var id = new objectId(req.params.id);
-        var url = 'mongodb://localhost:27017/website';
+        var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('projects');
 
