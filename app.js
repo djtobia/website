@@ -27,7 +27,7 @@ app.use('/projects', projectRouter);
 app.use('/admin', adminRouter);
 app.use('/contact', contactRouter);
 app.get('/', function (req, res) {
-    var url = 'mongodb://localhost:27017/website';
+    var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
     mongodb.connect(url, function (err, db) {
         var collection = db.collection('projects');
 
