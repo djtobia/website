@@ -43,8 +43,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('*', function(req,res){
-    res.status(404);
-   res.render('error',{status: res.status});
+   res.render('error',{'returnedStatus': 404});
 });
 
 app.get('/about', function(req,res){
