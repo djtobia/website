@@ -8,9 +8,9 @@
 
     <title>Utilities</title>
     <!--bower:css-->
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
-    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css'/>
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css'/>
     <!--endbower-->
     <!--inject:css-->
     <link rel="stylesheet" href="/css/main.css">
@@ -34,7 +34,7 @@
         <a href="/about" class="smoothScroll">About</a>
         <a href="/projects" class="smoothScroll">Projects</a>
         <a href="/contact" class="smoothScroll">Contact</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
+        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
     <!-- Menu button -->
@@ -62,7 +62,11 @@
     <div class="container">
         <div class="row centered">
             <div class="col-lg-6 col-lg-offset-3">
-                <p><a href="/admin/addProject"><button class="btn btn-warning">Add Project</button></a></p>
+                <h3>User Utilities</h3>
+                <p></p>
+                <p><a href="/admin/addProject">
+                        <button class="btn btn-warning">Add Project</button>
+                    </a></p>
             </div><!-- col-lg-8 -->
         </div><!-- row -->
     </div><!-- container -->
