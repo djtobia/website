@@ -6,11 +6,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Contact</title>
+    <title>Login</title>
     <!--bower:css-->
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
-    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css'/>
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css'/>
     <!--endbower-->
     <!--inject:css-->
     <link rel="stylesheet" href="/css/main.css">
@@ -23,7 +23,7 @@
 
 </head>
 
-<body data-spy="scroll" data-offset="0" data-target="#theMenu" ng-app="contactApp" ng-controller="contactController">
+<body data-spy="scroll" data-offset="0" data-target="#theMenu" ng-app="userApp" ng-controller="userController">
 
 <!-- Menu -->
 <nav class="menu" id="theMenu">
@@ -34,7 +34,7 @@
         <a href="/about" class="smoothScroll">About</a>
         <a href="/projects" class="smoothScroll">Projects</a>
         <a href="#contact" class="smoothScroll">Contact</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
+        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
     <!-- Menu button -->
@@ -48,9 +48,8 @@
     <div class="container">
         <br>
         <div class="row">
-            <h1>Dylan Tobia</h1>
+            <h1>Login</h1>
             <br>
-            <h3>Software Engineer</h3>
             <div class="col-lg-6 col-lg-offset-3">
             </div>
         </div>
@@ -63,15 +62,22 @@
 <div id="f">
     <div class="container">
         <div class="row">
-            <h3>CONTACT ME</h3>
+            <h3>LOGIN</h3>
 
 
             <div class="col-lg-6 col-lg-offset-3">
-                <p>1915 W. Riverview, St.<br/>Tucson, Arizona, 85745<br/>520-278-9172</p>
-                <p>djtobia@gmail.com</p>
+                <form name="loginForm">
+                    <p>Username: <input class="form-control" type="text" ng-model="username"
+                                        required/></p>
+                    <p>Password: <input class="form-control" type="password" ng-model="password"
+                                        required/></p>
+                    <button ng-click="login(loginForm)" class="btn btn-warning">Login</button>
+
+                </form>
+
+                <p>{{errorMessage}}</p>
             </div>
-
-
+            
         </div>
     </div>
 </div>

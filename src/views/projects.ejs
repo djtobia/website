@@ -34,6 +34,7 @@
         <a href="\about" class="smoothScroll">About</a>
         <a href="#projects" class="smoothScroll">Projects</a>
         <a href="\contact" class="smoothScroll">Contact</a>
+        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
     </div>
 
     <!-- Menu button -->
@@ -93,6 +94,7 @@
 <script src="/js/insertProjectApp.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/smoothscroll.js"></script>
+<script src="/js/userApp.js"></script>
 <!--endinject-->
 
 

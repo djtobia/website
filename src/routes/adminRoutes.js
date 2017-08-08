@@ -5,7 +5,11 @@ var mongodb = require('mongodb').MongoClient;
 
 adminRouter.route('/addProject')
     .get(function (req, res) {
-        res.render('insertProject');
+        if (!req.user) {
+            res.render('login');
+        }
+        else
+            res.render('insertProject');
     })
     .post(function (req, res) {
         var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
@@ -13,11 +17,20 @@ adminRouter.route('/addProject')
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('projects');
             collection.insertOne(req.body.project, function (err, results) {
-                res.send(results);
+                res.render('updatedProjects', {project: req.body.project});
                 db.close();
             });
-       });
+        });
 
+    });
+
+adminRouter.route('/')
+    .get(function (req, res) {
+        if (!req.user) {
+            res.render('login');
+        }
+        else
+            res.render('utilities');
     });
 
 

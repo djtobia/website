@@ -8,11 +8,23 @@ var app = express();
 var projectRouter = require('./src/routes/projectRoutes');
 var adminRouter = require('./src/routes/adminRoutes');
 var contactRouter = require('./src/routes/contactRoutes');
+var authRouter = require('./src/routes/authRoutes');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var session = require('express-session');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
+app.use(cookieParser());
+app.use(session({secret: 'djtobia'}));
+require('./src/config/passport')(app);
+app.use(function (req, res, next) {
+    res.locals.user = req.user;
+    next()
+});
 app.set('views', './src/views');
 app.set('images', './src/views/images');
 app.set('view engine', 'ejs');
@@ -26,6 +38,7 @@ app.listen(port, function (err) {
 app.use('/projects', projectRouter);
 app.use('/admin', adminRouter);
 app.use('/contact', contactRouter);
+app.use('/auth', authRouter);
 app.get('/', function (req, res) {
     var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
     mongodb.connect(url, function (err, db) {
@@ -33,7 +46,7 @@ app.get('/', function (req, res) {
 
         collection.find({}).toArray(function (err, results) {
             var images = [results[0].fileName ? "<img class='projectImage' src='/images/" + results[0].fileName + "' />" : "<div class='imageBuffer'></div>",
-                    results[1].fileName ? "<img class='projectImage' src='/images/" + results[1].fileName + "' />" :"<div class='imageBuffer'></div>",
+                results[1].fileName ? "<img class='projectImage' src='/images/" + results[1].fileName + "' />" : "<div class='imageBuffer'></div>",
                 results[2].fileName ? "<img class='projectImage' src='/images/" + results[2].fileName + "' />" : "<div class='imageBuffer'></div>"];
 
 
@@ -42,11 +55,15 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('*', function(req,res){
-   res.render('error',{'returnedStatus': 404});
+
+app.get('/accessDenied', function (req, res) {
+    res.render('accessDenied');
+});
+app.get('*', function (req, res) {
+    res.render('error');
 });
 
-app.get('/about', function(req,res){
+app.get('/about', function (req, res) {
     res.render('about');
 });
 

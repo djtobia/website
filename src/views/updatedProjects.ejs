@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Contact</title>
+    <title>Success</title>
     <!--bower:css-->
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
@@ -23,16 +23,16 @@
 
 </head>
 
-<body data-spy="scroll" data-offset="0" data-target="#theMenu" ng-app="contactApp" ng-controller="contactController">
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
 
 <!-- Menu -->
 <nav class="menu" id="theMenu">
     <div class="menu-wrap">
-        <h1 class="logo"><a href="#home" class="smoothScroll">Contact Me</a></h1>
+        <h1 class="logo"><a href="#home" class="smoothScroll">Projects</a></h1>
         <i class="icon-remove menu-close"></i>
-        <a href="/" class="smoothScroll">Home</a>
-        <a href="/about" class="smoothScroll">About</a>
-        <a href="/projects" class="smoothScroll">Projects</a>
+        <a href="\">Home</a>
+        <a href="#about" class="smoothScroll">About</a>
+        <a href="#projects" class="smoothScroll">Projects</a>
         <a href="#contact" class="smoothScroll">Contact</a>
         <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
     </div>
@@ -48,9 +48,8 @@
     <div class="container">
         <br>
         <div class="row">
-            <h1>Dylan Tobia</h1>
+            <h1>Successfully Added Project</h1>
             <br>
-            <h3>Software Engineer</h3>
             <div class="col-lg-6 col-lg-offset-3">
             </div>
         </div>
@@ -58,23 +57,21 @@
 </div><!-- /headerwrap -->
 
 
-<!-- ========== CONTACT SECTION ========== -->
-<section id="contact" name="contact"></section>
+<section id="projects" name="projects"></section>
 <div id="f">
     <div class="container">
-        <div class="row">
-            <h3>CONTACT ME</h3>
-
-
+        <div class="row centered">
             <div class="col-lg-6 col-lg-offset-3">
-                <p>1915 W. Riverview, St.<br/>Tucson, Arizona, 85745<br/>520-278-9172</p>
-                <p>djtobia@gmail.com</p>
-            </div>
-
-
-        </div>
-    </div>
-</div>
+                <h3><%= project.name %></h3><br/>
+                <p><%= project.desc%></p>
+                <p><%= project.longDesc %></p>
+                <a href="<%= project.link %>" target="_blank">Github Repository</a><br/><br />
+                <img class="<%= project.fileName ? "projectImage" : "noImage" %>"
+                     src="<%= "/images/"+project.fileName %>"/><br/>
+            </div><!-- col-lg-8 -->
+        </div><!-- row -->
+    </div><!-- container -->
+</div>    <!-- f -->
 
 
 <!-- Bootstrap core JavaScript
