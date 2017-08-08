@@ -42,6 +42,11 @@ app.get('/', function (req, res) {
     });
 });
 
+app.get('*', function(req,res){
+    res.status(404);
+   res.render('error',{status: res.status});
+});
+
 app.get('/about', function(req,res){
     res.render('about');
 });
