@@ -23,7 +23,7 @@ app.use(session({secret: 'djtobia'}));
 require('./src/config/passport')(app);
 app.use(function (req, res, next) {
     res.locals.user = req.user;
-    next()
+    next();
 });
 app.set('views', './src/views');
 app.set('images', './src/views/images');
@@ -45,9 +45,9 @@ app.get('/', function (req, res) {
         var collection = db.collection('projects');
 
         collection.find({}).toArray(function (err, results) {
-            var images = [results[0].fileName ? "<img class='projectImage' src='/images/" + results[0].fileName + "' />" : "<div class='imageBuffer'></div>",
-                results[1].fileName ? "<img class='projectImage' src='/images/" + results[1].fileName + "' />" : "<div class='imageBuffer'></div>",
-                results[2].fileName ? "<img class='projectImage' src='/images/" + results[2].fileName + "' />" : "<div class='imageBuffer'></div>"];
+            var images = [results[0].fileName ? '<img class="projectImage" src="/images/' + results[0].fileName + '" />' : '<div class="imageBuffer"></div>',
+                results[1].fileName ? '<img class="projectImage" src="/images/' + results[1].fileName + '" />' : '<div class="imageBuffer"></div>',
+                results[2].fileName ? '<img class="projectImage" src="/images/' + results[2].fileName + '" />' : '<div class="imageBuffer"></div>'];
 
 
             res.render('index', {projects: results, images: images});
@@ -59,11 +59,13 @@ app.get('/', function (req, res) {
 app.get('/accessDenied', function (req, res) {
     res.render('accessDenied');
 });
-app.get('*', function (req, res) {
-    res.render('error');
-});
+
 
 app.get('/about', function (req, res) {
     res.render('about');
+});
+
+app.get('*', function (req, res) {
+    res.render('error');
 });
 

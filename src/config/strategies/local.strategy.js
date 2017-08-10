@@ -21,7 +21,7 @@ module.exports = function () {
                         }
 
                         if(!results){
-                            return done(null, false, {message: "Username not found."})
+                            return done(null, false, {message: 'Username not found.'});
                         }
 
                         var user = results;

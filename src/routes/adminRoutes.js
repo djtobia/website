@@ -8,8 +8,9 @@ adminRouter.route('/addProject')
         if (!req.user) {
             res.render('login');
         }
-        else
+        else {
             res.render('insertProject');
+        }
     })
     .post(function (req, res) {
         var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
@@ -29,8 +30,9 @@ adminRouter.route('/')
         if (!req.user) {
             res.render('login');
         }
-        else
+        else {
             res.render('utilities');
+        }
     });
 
 
