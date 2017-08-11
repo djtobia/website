@@ -33,7 +33,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
             });
 
             httpsReq.end();
-        }).then(function (err) {
+        }, function (err) {
         if (err) {
             console.log(err);
         }
