@@ -54,7 +54,7 @@ contactRouter.route('/sendEmail').post(function(req,res){
         console.log("transporter sending mail");
 
         transporter.sendMail({
-            from: '',
+            from: 'djtobai@gmail.com',
             to: 'djtobia@gmail.com',
             subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
             text: req.body.contact.content
