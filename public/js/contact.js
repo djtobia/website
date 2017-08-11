@@ -13,41 +13,42 @@ app.controller('contactController', function ($scope, contactService) {
             $scope.errorMessage = "You must complete the form";
             return;
         }
-        var recaptcha = grecaptcha.getResponse();
+        //remove all // from comments for captcha functionality
+        //var recaptcha = grecaptcha.getResponse(); un comment for captcah
 
-        if (recaptcha.length != 0) {
-            contactService.checkCaptcha(recaptcha).then(function success(res) {
-                if (res.data.success) {
-                    contactService.sendEmail($scope.userInfo).then(function success(res) {
-                            console.log(res.data);
-                            if (res.data.emailSent) {
-                                $scope.emailSent = true;
-                                $scope.emailSentMessage = "Your email has been sent.";
-                                $scope.errorMessage = null;
-                            } else {
-                                $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
-                            }
-                        }, function error(res) {
-                            console.log(res);
-                            console.log('problem sending email');
-                            $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
-                        }
-                    );
-                }
-                else {
-                    console.log("CAPTCHA FAILED")
+        // if (recaptcha.length != 0) {
+        //     contactService.checkCaptcha(recaptcha).then(function success(res) {
+        //         if (res.data.success) {
+        contactService.sendEmail($scope.userInfo).then(function success(res) {
+                console.log(res.data);
+                if (res.data.emailSent) {
+                    $scope.emailSent = true;
+                    $scope.emailSentMessage = "Your email has been sent.";
+                    $scope.errorMessage = null;
+                } else {
+                    $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
                 }
             }, function error(res) {
-                console.log("ERROR");
                 console.log(res);
-            });
+                console.log('problem sending email');
+                $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
+            }
+        );
+
+        // else {
+        //     console.log("CAPTCHA FAILED")
+        // }
+        // }, function error(res) {
+        //     console.log("ERROR");
+        //     console.log(res);
+        // });
 
 
-        }
-        else {
-            $scope.errorMessage = "You must check the recaptcha.";
-        }
     }
+    // else {
+    //     $scope.errorMessage = "You must check the recaptcha.";
+    // }
+
 
 }).service('contactService', function ($http) {
 
