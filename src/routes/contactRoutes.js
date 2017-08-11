@@ -2,7 +2,7 @@ var express = require('express');
 var contactRouter = express.Router();
 var https = require('https');
 var NodeMailer = require('nodemailer');
-var xoauth2 = requrie('xoauth2');
+var xoauth2 = require('xoauth2');
 var smtpTransport = require('nodemailer-smtp-transport');
 
 contactRouter.route('/').get(function (req, res) {
@@ -62,7 +62,7 @@ contactRouter.route('/sendEmail').post(function(req,res){
              subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
              text: req.body.contact.content
          };
-        
+
 
         console.log("transporter created");
         console.log("transporter sending mail");

@@ -15,13 +15,11 @@ app.controller('contactController', function ($scope, contactService) {
         }
         var recaptcha = grecaptcha.getResponse();
 
-        console.log(recaptcha.length);
         if (recaptcha.length != 0) {
             contactService.checkCaptcha(recaptcha).then(function success(res){
                 if(res){
                     contactService.sendEmail($scope.userInfo).then(function success(res) {
                             if (res) {
-                                console.log('email sent');
                                 $scope.emailSent = true;
                                 $scope.emailSentMessage = "Your email has been sent.";
                                 $scope.errorMessage = null;
