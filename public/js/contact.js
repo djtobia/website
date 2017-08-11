@@ -19,7 +19,7 @@ app.controller('contactController', function ($scope, contactService) {
             contactService.checkCaptcha(recaptcha).then(function success(res) {
                 if (res.data.success) {
                     contactService.sendEmail($scope.userInfo).then(function success(res) {
-
+                            console.log(res.data);
                             if (res.data.emailSent) {
                                 $scope.emailSent = true;
                                 $scope.emailSentMessage = "Your email has been sent.";

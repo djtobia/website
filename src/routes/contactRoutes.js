@@ -59,10 +59,8 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     console.log('transporter sending mail');
     var emailSent = false;
     transporter.sendMail(mailOptions, function (err, info) {
-        console.log('checking err');
-        console.log('err' + err);
+        
         if (err) {
-            console.log('in err');
             console.log(err);
         } else {
             console.log('mail sent');
