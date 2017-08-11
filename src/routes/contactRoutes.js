@@ -47,7 +47,7 @@ contactRouter.route('/sendEmail').post(function(req,res){
             service: 'gmail',
             auth: {
                 user: 'djtobia@gmail.com',
-                pass: 'kingscross1025'
+                pass: 'KingsCross1025'
             }
         }));
         console.log("transporter created");
