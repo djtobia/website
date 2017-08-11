@@ -50,7 +50,7 @@ app.controller('contactController', function ($scope, contactService) {
       var config = {
           method: 'POST',
           url: '/contact/checkCaptcha',
-          data: {captcah: recaptcha}
+          data: {captcha: recaptcha}
       }
 
       return $http(config);
