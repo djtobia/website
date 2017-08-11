@@ -51,7 +51,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         from: req.body.contact.name + ' <' + req.body.contact.email + '>',
         to: 'djtobia@gmail.com',
         subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
-        text: req.body.contact.content
+        text: req.body.contact.content + ' ' + req.body.contact.email
     };
 
 
@@ -59,7 +59,10 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     console.log('transporter sending mail');
     var emailSent = false;
     transporter.sendMail(mailOptions, function (err, info) {
+        console.log('checking err');
+        console.log('err' + err);
         if (err) {
+            console.log('in err');
             console.log(err);
         } else {
             console.log('mail sent');
