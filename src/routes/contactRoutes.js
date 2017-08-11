@@ -26,7 +26,7 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
             httpsRes.on('end', function () {
                 human = JSON.parse(googleResponse).success;
             });
-            console.log('human : ' + human);
+
 
         });
 
@@ -37,8 +37,9 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
     });
 
     httpsReq.end();
+    console.log(human);
 
-    res.send(human);
+    res.send({'success':human});
 });
 
 contactRouter.route('/sendEmail').post(function (req, res) {
