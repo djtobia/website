@@ -39,7 +39,7 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
 contactRouter.route('/sendEmail').post(function (req, res) {
 
     console.log('creating transport');
-    var transporter = NodeMailer.createTransport({
+    var transporter = NodeMailer.createTransport('SMTP', {
         service: 'gmail',
         auth: {
             user: 'djtobia@gmail.com',
