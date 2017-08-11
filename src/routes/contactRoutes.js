@@ -13,7 +13,7 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
     console.log(req.body);
 
     var human = false;
-    var httpsReq = https.request(' https://www.google.com/recaptcha/api/siteverify?secret=6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf&response=' + req.body.captcha,
+    var httpsReq = https.request('https://www.google.com/recaptcha/api/siteverify?secret=6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf&response=' + req.body.captcha,
         function (httpsRes) {
 
             var googleResponse = '';

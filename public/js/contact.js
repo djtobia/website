@@ -20,7 +20,7 @@ app.controller('contactController', function ($scope, contactService) {
                 console.log(res);
                 if(res.success){
                     contactService.sendEmail($scope.userInfo).then(function success(res) {
-                            if (res) {
+                            if (res.data.success) {
                                 $scope.emailSent = true;
                                 $scope.emailSentMessage = "Your email has been sent.";
                                 $scope.errorMessage = null;
