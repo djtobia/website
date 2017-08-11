@@ -22,15 +22,19 @@ contactRouter.route('/sendEmail').post(function (req, res) {
             httpsRes.on("end", function () {
                 human = JSON.parse(googleResponse).success;
             });
+            console.log("human : " + human);
         });
 
         httpsReq.on("error", function(err){
+            console.log("error :" );
+            console.log(err);
             res.send("Error: " + JSON.stringify(err));
         });
 
         httpsReq.end();
 
     if (human) {
+        console.log("creating transport");
         var transporter = NodeMailer.createTransport(smtpTransport({
             service: 'gmail',
             auth: {
@@ -38,16 +42,22 @@ contactRouter.route('/sendEmail').post(function (req, res) {
                 pass: 'kingscross1025'
             }
         }));
+        console.log("transporter created");
+        console.log("transporter sending mail");
+
         transporter.sendMail({
             from: '',
             to: 'djtobia@gmail.com',
             subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
             text: req.body.contact.content
         });
+        console.log("mail sent");
         transporter.close();
+        console.log("transporter closed");
+        res.send(true);
     }else{
         console.log("Captcha not checked");
-        res.send({'human' : false});
+        res.send(false);
     }
 
 });
