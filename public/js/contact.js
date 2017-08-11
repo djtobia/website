@@ -17,7 +17,6 @@ app.controller('contactController', function ($scope, contactService) {
 
         if (recaptcha.length != 0) {
             contactService.checkCaptcha(recaptcha).then(function success(res) {
-                console.log(res);
                 if (res.data.success) {
                     contactService.sendEmail($scope.userInfo).then(function success(res) {
 
