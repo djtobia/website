@@ -22,9 +22,9 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
             console.log(err);
             human = false;
         }
-        if (human != false) {
+        if (human !== false) {
             if (response.success) {
-                console.log("passed captcha");
+                console.log('passed captcha');
                 human = true;
             }
             else {
