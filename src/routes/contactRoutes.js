@@ -2,6 +2,7 @@ var express = require('express');
 var contactRouter = express.Router();
 var https = require('https');
 var NodeMailer = require('nodemailer');
+var xoauth2 = requrie('xoauth2');
 var smtpTransport = require('nodemailer-smtp-transport');
 
 contactRouter.route('/').get(function (req, res) {
@@ -43,23 +44,37 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
 contactRouter.route('/sendEmail').post(function(req,res){
 
         console.log("creating transport");
-        var transporter = NodeMailer.createTransport(smtpTransport({
-            service: 'gmail',
-            auth: {
-                user: 'djtobia@gmail.com',
-                pass: 'KingsCross1025'
-            }
-        }));
+         var transporter = NodeMailer.createTransport({
+             service: 'gmail',
+             auth: {
+                 xoauth2: xoauth2.createXOAuth2Generator({
+                     user: 'djtobia@gmail.com',
+                     clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
+                     clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
+                     refreshToken: '1/6q2-PjSm0jj4-fFGD6DdgJFGIQ8oZhm2HqdL7X-eFFg'
+                 })
+             }
+         });
+
+         var mailOptions = {
+             from: req.body.contact.name + ' <'+req.body.contact.email +'>',
+             to: 'djtobia@gmail.com',
+             subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
+             text: req.body.contact.content
+         };
+        
+
         console.log("transporter created");
         console.log("transporter sending mail");
 
-        transporter.sendMail({
-            from: 'djtobai@gmail.com',
-            to: 'djtobia@gmail.com',
-            subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
-            text: req.body.contact.content
+        transporter.sendMail(mailOptions,function(err, res){
+            if(err){
+                console.log(err);
+            }else {
+
+                console.log("mail sent");
+            }
         });
-        console.log("mail sent");
         transporter.close();
         console.log("transporter closed");
 
