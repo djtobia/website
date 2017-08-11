@@ -8,7 +8,7 @@ contactRouter.route('/').get(function (req, res) {
     res.render('contact');
 });
 
-contactRouter.route('/sendEmail').post(function (req, res) {
+contactRouter.route('/checkCaptcha').post(function (req, res) {
     console.log(req.body);
 
     var human = false;
@@ -35,34 +35,38 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         res.send("Error: " + JSON.stringify(err));
     });
 
-    httpsReq.on('end', function (err) {
-        if (human) {
-            console.log("creating transport");
-            var transporter = NodeMailer.createTransport(smtpTransport({
-                service: 'gmail',
-                auth: {
-                    user: 'djtobia@gmail.com',
-                    pass: 'kingscross1025'
-                }
-            }));
-            console.log("transporter created");
-            console.log("transporter sending mail");
+    httpReq.end();
 
-            transporter.sendMail({
-                from: '',
-                to: 'djtobia@gmail.com',
-                subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
-                text: req.body.contact.content
-            });
-            console.log("mail sent");
-            transporter.close();
-            console.log("transporter closed");
-            res.send(true);
-        } else {
-            console.log("Captcha not checked");
-            res.send(false);
-        }
-    });
+    res.send(human);
+
+
+});
+
+contactRouter.route('/sendEmail').post(function(req,res){
+
+        console.log("creating transport");
+        var transporter = NodeMailer.createTransport(smtpTransport({
+            service: 'gmail',
+            auth: {
+                user: 'djtobia@gmail.com',
+                pass: 'kingscross1025'
+            }
+        }));
+        console.log("transporter created");
+        console.log("transporter sending mail");
+
+        transporter.sendMail({
+            from: '',
+            to: 'djtobia@gmail.com',
+            subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
+            text: req.body.contact.content
+        });
+        console.log("mail sent");
+        transporter.close();
+        console.log("transporter closed");
+
+        res.send(true);
+
 });
 
 module.exports = contactRouter;

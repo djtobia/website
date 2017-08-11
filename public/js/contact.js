@@ -17,19 +17,29 @@ app.controller('contactController', function ($scope, contactService) {
 
         console.log(recaptcha.length);
         if (recaptcha.length != 0) {
-            contactService.sendEmail($scope.userInfo, recaptcha).then(function success(res) {
-                    if (res) {
-                        console.log('email sent');
-                        $scope.emailSent = true;
-                        $scope.emailSentMessage = "Your email has been sent.";
-                        $scope.errorMessage = null;
-                    }
-                }, function error(res) {
-                    console.log(res);
-                    console.log('problem sending email');
-                    $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
+            contactService.checkCaptcha(recaptcha).then(function success(res){
+                if(res){
+                    contactService.sendEmail($scope.userInfo).then(function success(res) {
+                            if (res) {
+                                console.log('email sent');
+                                $scope.emailSent = true;
+                                $scope.emailSentMessage = "Your email has been sent.";
+                                $scope.errorMessage = null;
+                            }
+                        }, function error(res) {
+                            console.log(res);
+                            console.log('problem sending email');
+                            $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
+                        }
+                    );
                 }
-            )
+                else{console.log("CAPTCHA FAILED")}
+            }, function error(res){
+                console.log("ERROR");
+                console.log(res);
+            });
+
+
         }
         else {
             $scope.errorMessage = "You must check the recaptcha.";
@@ -37,11 +47,22 @@ app.controller('contactController', function ($scope, contactService) {
     }
 
 }).service('contactService', function ($http) {
-    this.sendEmail = function (userInfo, recaptcha) {
+
+    this.checkCaptcha = function(recaptcha){
+      var config = {
+          method: 'POST',
+          url: '/contact/checkCaptcha',
+          data: {captcah: recaptcha}
+      }
+
+      return $http(config);
+
+    };
+    this.sendEmail = function (userInfo) {
         var config = {
             method: 'POST',
             url: '/contact/sendEmail',
-            data: {contact: userInfo, captcha: recaptcha}
+            data: {contact: userInfo}
         };
         return $http(config);
     }
