@@ -1,7 +1,6 @@
 var express = require('express');
 var contactRouter = express.Router();
 var NodeMailer = require('nodemailer');
-var xoauth2 = require('xoauth2');
 var RecaptchaVerify = require('recaptcha-verify');
 
 contactRouter.route('/').get(function (req, res) {
@@ -43,11 +42,8 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     var transporter = NodeMailer.createTransport({
         service: 'gmail',
         auth: {
-            type: 'OAuth2',
             user: 'djtobia@gmail.com',
-            clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
-            clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
-            refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk'
+            pass: 'KingsCross1025'
         }
     });
 
@@ -62,7 +58,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     console.log('transporter created');
     console.log('transporter sending mail');
     var emailSent = false;
-    transporter.sendMail(mailOptions, function (err, res) {
+    transporter.sendMail(mailOptions, function (err, info) {
         if (err) {
             console.log(err);
         } else {
