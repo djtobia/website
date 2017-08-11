@@ -47,9 +47,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
             user: 'djtobia@gmail.com',
             clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
             clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
-            refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk',
-            accessToken: 'ya29.GlukBC2IJe4ffjr3YpApPcGP8ZJIkkc6a_1Kr0Jusbm8qgsAPmZ0rxZwlr5nSlH1PtzRyfJOpBaM3EqMPyT7ZbhpyWVD7UJvD1CxCO8sXW-CPLBOjeajybAMP8CS',
-            expires: 3500
+            refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk'
         }
     });
 
