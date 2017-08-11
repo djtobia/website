@@ -15,21 +15,21 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
         secret: '6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf',
         verbose: true
     });
-    var human = false;
+
 
     recaptcha.checkResponse(req.body.captcha, function (err, response) {
         if (err) {
             console.log(err);
-            res.send({'success': human});
+            res.send({'success': false});
         }
 
         if (response.success) {
             human = true;
             console.log("passed captcha");
-            res.send({'success': human});
+            res.send({'success': true});
         }
         else {
-            res.send({'success': human});
+            res.send({'success': false});
         }
     });
 
