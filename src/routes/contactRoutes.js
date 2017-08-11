@@ -57,20 +57,21 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
     console.log('transporter created');
     console.log('transporter sending mail');
-    var emailSent = false;
+
     transporter.sendMail(mailOptions, function (err, info) {
-        
+
         if (err) {
             console.log(err);
+            res.send({'emailSent' : false});
         } else {
             console.log('mail sent');
-            emailSent = true;
+
         }
     });
     transporter.close();
     console.log('transporter closed');
 
-    res.send({'emailSent': emailSent});
+    res.send({'emailSent': true});
 
 })
 ;
