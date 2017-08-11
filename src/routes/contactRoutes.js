@@ -10,24 +10,26 @@ contactRouter.route('/').get(function (req, res) {
 
 contactRouter.route('/checkCaptcha').post(function (req, res) {
 
+    console.log(req.body);
     var recaptcha = new RecaptchaVerify({
         secret: '6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf',
         verbose: true
     });
-    var human = null;
+    var human = true;
 
     recaptcha.checkResponse(req.body.captcha, function (err, response) {
         if (err) {
             console.log(err);
             human = false;
         }
-
-        if (response.success && human != false) {
-            console.log("passed captcha");
-            human = true;
-        }
-        else {
-            human = false;
+        if (human != false) {
+            if (response.success) {
+                console.log("passed captcha");
+                human = true;
+            }
+            else {
+                human = false;
+            }
         }
 
     });
