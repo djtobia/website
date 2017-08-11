@@ -26,18 +26,16 @@ contactRouter.route('/sendEmail').post(function (req, res) {
                 human = JSON.parse(googleResponse).success;
             });
             console.log("human : " + human);
-            httpsReq.on("error", function (err) {
-                console.log("error :");
-                console.log(err);
-                res.send("Error: " + JSON.stringify(err));
-            });
 
-            httpsReq.end();
-        }, function (err) {
-        if (err) {
-            console.log(err);
-        }
+        });
 
+    httpsReq.on("error", function (err) {
+        console.log("error :");
+        console.log(err);
+        res.send("Error: " + JSON.stringify(err));
+    });
+
+    httpsReq.on('end', function (err) {
         if (human) {
             console.log("creating transport");
             var transporter = NodeMailer.createTransport(smtpTransport({
