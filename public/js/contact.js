@@ -4,7 +4,7 @@
 var app = angular.module("contactApp", []);
 app.controller('contactController', function ($scope, contactService) {
 
-    $scope.userInfo = {'sender': null, 'content': null, 'name': null};
+    $scope.userInfo = {'email': null, 'content': null, 'name': null};
 
     $scope.sendEmail = function (form) {
         if (!form.$valid) {
@@ -18,6 +18,7 @@ app.controller('contactController', function ($scope, contactService) {
             }, function error(res) {
                 console.log(res);
                 console.log("problem sending email");
+                $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
             }
         )
     }
@@ -26,7 +27,7 @@ app.controller('contactController', function ($scope, contactService) {
     this.sendEmail = function (userInfo) {
         var config = {
             method: 'POST',
-            url: '/contact',
+            url: '/contact/sendEmail',
             data: {contact: userInfo}
         };
         return $http(config);

@@ -8,9 +8,9 @@
 
     <title>Contact</title>
     <!--bower:css-->
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
-    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css'/>
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css'/>
     <!--endbower-->
     <!--inject:css-->
     <link rel="stylesheet" href="/css/main.css">
@@ -19,7 +19,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-
+    <script src='https://www.google.com/recaptcha/api.js'></script>
 
 </head>
 
@@ -34,7 +34,7 @@
         <a href="/about" class="smoothScroll">About</a>
         <a href="/projects" class="smoothScroll">Projects</a>
         <a href="#contact" class="smoothScroll">Contact</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
+        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
     <!-- Menu button -->
@@ -64,12 +64,20 @@
     <div class="container">
         <div class="row">
             <h3>CONTACT ME</h3>
+            <form name="contactForm">
+                Email: <input type="email" class="form-control" ng-model="userInfo.email" required/><br/>
+                Name: <input type="text" class="form-control" ng-model="userInfo.name" required/> <br/>
+                Content: <textarea class="form-control" ng-model="userInfo.content" placeholder="Enter your email here"
+                                   required></textarea><br/>
+                <div class="g-recaptcha" data-sitekey="6Lc3hiwUAAAAANO74MshSxO8PlE15ha2zK7uZCa5"></div>
+                <br/>
+                <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</input>
+            </form>
 
-
-            <div class="col-lg-6 col-lg-offset-3">
-                <p>1915 W. Riverview, St.<br/>Tucson, Arizona, 85745<br/>520-278-9172</p>
-                <p>djtobia@gmail.com</p>
-            </div>
+            <!--<div class="col-lg-6 col-lg-offset-3">-->
+            <!--<p>1915 W. Riverview, St.<br/>Tucson, Arizona, 85745<br/>520-278-9172</p>-->
+            <!--<p>djtobia@gmail.com</p>-->
+            <!--</div>-->
 
 
         </div>
