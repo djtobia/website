@@ -64,22 +64,21 @@
     <div class="container">
         <div class="row">
             <h3>CONTACT ME</h3>
+            <div ng-if="!emailSent">
             <form name="contactForm">
-                Email: <input type="email" class="form-control" ng-model="userInfo.email" required/><br/>
+                Email: <input type="email" class="form-control" ng-model="userInfo.email" required /><br/>
                 Name: <input type="text" class="form-control" ng-model="userInfo.name" required/> <br/>
                 Content: <textarea class="form-control" ng-model="userInfo.content" placeholder="Enter your email here"
                                    required></textarea><br/>
                 <div class="g-recaptcha" data-sitekey="6Lc3hiwUAAAAANO74MshSxO8PlE15ha2zK7uZCa5"></div>
                 <br/>
-                <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</input>
+                <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</button>
             </form>
-
-            <!--<div class="col-lg-6 col-lg-offset-3">-->
-            <!--<p>1915 W. Riverview, St.<br/>Tucson, Arizona, 85745<br/>520-278-9172</p>-->
-            <!--<p>djtobia@gmail.com</p>-->
-            <!--</div>-->
+                <h2>{{errorMessage}}</h2>
+            <h2>{{emailSentMessage}}</h2>
 
 
+            </div>
         </div>
     </div>
 </div>
