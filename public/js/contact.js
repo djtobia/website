@@ -13,10 +13,11 @@ app.controller('contactController', function ($scope, contactService) {
             $scope.errorMessage = "You must complete the form";
             return;
         }
+        var recaptcha = grerecaptcha.getResponse();
 
-        console.log(grecaptcha.getResponse().length);
+        console.log(recaptcha.length);
         if (grecaptcha.getResponse().length != 0) {
-            contactService.sendEmail($scope.userInfo).then(function success(res) {
+            contactService.sendEmail($scope.userInfo, grecaptcha).then(function success(res) {
                     if (res) {
                         console.log('email sent');
                         $scope.emailSent = true;
@@ -36,11 +37,11 @@ app.controller('contactController', function ($scope, contactService) {
     }
 
 }).service('contactService', function ($http) {
-    this.sendEmail = function (userInfo) {
+    this.sendEmail = function (userInfo, recapcha) {
         var config = {
             method: 'POST',
             url: '/contact/sendEmail',
-            data: {contact: userInfo}
+            data: {contact: userInfo, captcha: recapcha}
         };
         return $http(config);
     }
