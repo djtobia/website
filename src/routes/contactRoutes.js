@@ -1,9 +1,8 @@
 var express = require('express');
 var contactRouter = express.Router();
-var https = require('https');
 var NodeMailer = require('nodemailer');
 var xoauth2 = require('xoauth2');
-var smtpTransport = require('nodemailer-smtp-transport');
+var RecaptchaVerify = require('recaptcha-verify');
 
 contactRouter.route('/').get(function (req, res) {
     res.render('contact');
@@ -12,34 +11,28 @@ contactRouter.route('/').get(function (req, res) {
 contactRouter.route('/checkCaptcha').post(function (req, res) {
     console.log(req.body);
 
+    var recaptcha = new RecaptchaVerify({
+        secret: '6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf',
+        verbose: true
+    });
     var human = false;
-    var httpsReq = https.request('https://www.google.com/recaptcha/api/siteverify?secret=6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf&response=' + req.body.captcha,
-        function (httpsRes) {
 
-            var googleResponse = '';
-            httpsRes.on('data', function (chunk) {
-                googleResponse += chunk;
-            });
-            console.log('google response');
-            console.log(googleResponse);
+    recaptcha.checkResponse(req.body.captcha, function (err, response) {
+        if (err) {
+            console.log(err);
+            res.send({'success': human});
+        }
 
-            httpsRes.on('end', function () {
-                human = JSON.parse(googleResponse).success;
-            });
-
-
-        });
-
-    httpsReq.on('error', function (err) {
-        console.log('error :');
-        console.log(err);
-        res.send('Error: ' + JSON.stringify(err));
+        if (response.success) {
+            human = true;
+            console.log("passed captcha");
+            res.send({'success': human});
+        }
+        else {
+            res.send({'success': human});
+        }
     });
 
-    httpsReq.end();
-    console.log(human);
-
-    res.send({'success':human});
 });
 
 contactRouter.route('/sendEmail').post(function (req, res) {
@@ -53,7 +46,8 @@ contactRouter.route('/sendEmail').post(function (req, res) {
             clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
             clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
             refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk'
-        }});
+        }
+    });
 
     var mailOptions = {
         from: req.body.contact.name + ' <' + req.body.contact.email + '>',
