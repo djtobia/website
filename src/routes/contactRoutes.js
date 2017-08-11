@@ -45,6 +45,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         });
         transporter.close();
     }else{
+        console.log("Captcha not checked");
         res.send({'human' : false});
     }
 
