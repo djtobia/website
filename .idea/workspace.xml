@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="015be552-4d96-46e4-b38c-30ad7aafcf38" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/contact.js" afterPath="$PROJECT_DIR$/public/js/contact.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/contactRoutes.js" afterPath="$PROJECT_DIR$/src/routes/contactRoutes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/contact.ejs" afterPath="$PROJECT_DIR$/src/views/contact.ejs" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -99,8 +99,8 @@
       <file leaf-file-name="contact.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/contact.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+            <state relative-caret-position="459">
+              <caret line="80" column="45" lean-forward="false" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -109,8 +109,8 @@
       <file leaf-file-name="contact.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/contact.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="765">
+              <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -201,9 +201,9 @@
         <option value="$PROJECT_DIR$/src/routes/projectRoutes.js" />
         <option value="$PROJECT_DIR$/src/config/strategies/local.strategy.js" />
         <option value="$PROJECT_DIR$/src/views/about.ejs" />
-        <option value="$PROJECT_DIR$/src/views/contact.ejs" />
         <option value="$PROJECT_DIR$/src/routes/contactRoutes.js" />
         <option value="$PROJECT_DIR$/public/js/contact.js" />
+        <option value="$PROJECT_DIR$/src/views/contact.ejs" />
       </list>
     </option>
   </component>
@@ -544,12 +544,12 @@
       <workItem from="1502069730262" duration="816000" />
       <workItem from="1502150341172" duration="16465000" />
       <workItem from="1502408412306" duration="721000" />
-      <workItem from="1502430130558" duration="4595000" />
+      <workItem from="1502430130558" duration="4797000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61443000" />
+    <option name="totallyTimeSpent" value="61645000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -879,14 +879,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/contact.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/contactRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -895,10 +887,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/contact.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="80" column="45" lean-forward="false" selection-start-line="80" selection-start-column="45" selection-end-line="80" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/contact.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="765">
+          <caret line="45" column="29" lean-forward="true" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
           <folding />
         </state>
       </provider>

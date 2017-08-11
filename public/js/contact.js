@@ -17,7 +17,7 @@ app.controller('contactController', function ($scope, contactService) {
 
         console.log(recaptcha.length);
         if (recaptcha.length != 0) {
-            contactService.sendEmail($scope.userInfo, grecaptcha).then(function success(res) {
+            contactService.sendEmail($scope.userInfo, recaptcha).then(function success(res) {
                     if (res) {
                         console.log('email sent');
                         $scope.emailSent = true;
@@ -37,11 +37,11 @@ app.controller('contactController', function ($scope, contactService) {
     }
 
 }).service('contactService', function ($http) {
-    this.sendEmail = function (userInfo, recapcha) {
+    this.sendEmail = function (userInfo, recaptcha) {
         var config = {
             method: 'POST',
             url: '/contact/sendEmail',
-            data: {contact: userInfo, captcha: recapcha}
+            data: {contact: userInfo, captcha: recaptcha}
         };
         return $http(config);
     }
