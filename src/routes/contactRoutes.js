@@ -16,24 +16,24 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
     var httpsReq = https.request(' https://www.google.com/recaptcha/api/siteverify?secret=6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf&response=' + req.body.captcha,
         function (httpsRes) {
 
-            var googleResponse = "";
-            httpsRes.on("data", function (chunk) {
+            var googleResponse = '';
+            httpsRes.on('data', function (chunk) {
                 googleResponse += chunk;
             });
-            console.log("google response");
+            console.log('google response');
             console.log(googleResponse);
 
-            httpsRes.on("end", function () {
+            httpsRes.on('end', function () {
                 human = JSON.parse(googleResponse).success;
             });
-            console.log("human : " + human);
+            console.log('human : ' + human);
 
         });
 
-    httpsReq.on("error", function (err) {
-        console.log("error :");
+    httpsReq.on('error', function (err) {
+        console.log('error :');
         console.log(err);
-        res.send("Error: " + JSON.stringify(err));
+        res.send('Error: ' + JSON.stringify(err));
     });
 
     httpsReq.end();
@@ -43,7 +43,7 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
 
 contactRouter.route('/sendEmail').post(function(req,res){
 
-        console.log("creating transport");
+        console.log('creating transport');
          var transporter = NodeMailer.createTransport({
              service: 'gmail',
              auth: {
@@ -64,19 +64,18 @@ contactRouter.route('/sendEmail').post(function(req,res){
          };
 
 
-        console.log("transporter created");
-        console.log("transporter sending mail");
+        console.log('transporter created');
+        console.log('transporter sending mail');
 
         transporter.sendMail(mailOptions,function(err, res){
             if(err){
                 console.log(err);
             }else {
-
-                console.log("mail sent");
+                console.log('mail sent');
             }
         });
         transporter.close();
-        console.log("transporter closed");
+        console.log('transporter closed');
 
         res.send(true);
 
