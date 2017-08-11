@@ -13,10 +13,10 @@ app.controller('contactController', function ($scope, contactService) {
             $scope.errorMessage = "You must complete the form";
             return;
         }
-        var recaptcha = grerecaptcha.getResponse();
+        var recaptcha = grecaptcha.getResponse();
 
         console.log(recaptcha.length);
-        if (grecaptcha.getResponse().length != 0) {
+        if (recaptcha.length != 0) {
             contactService.sendEmail($scope.userInfo, grecaptcha).then(function success(res) {
                     if (res) {
                         console.log('email sent');
