@@ -16,14 +16,17 @@ app.controller('contactController', function ($scope, contactService) {
         var recaptcha = grecaptcha.getResponse();
 
         if (recaptcha.length != 0) {
-            contactService.checkCaptcha(recaptcha).then(function success(res){
+            contactService.checkCaptcha(recaptcha).then(function success(res) {
                 console.log(res);
-                if(res.success){
+                if (res.data.success) {
                     contactService.sendEmail($scope.userInfo).then(function success(res) {
-                            if (res.data.success) {
+
+                            if (res.data.emailSent) {
                                 $scope.emailSent = true;
                                 $scope.emailSentMessage = "Your email has been sent.";
                                 $scope.errorMessage = null;
+                            } else {
+                                $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
                             }
                         }, function error(res) {
                             console.log(res);
@@ -32,8 +35,10 @@ app.controller('contactController', function ($scope, contactService) {
                         }
                     );
                 }
-                else{console.log("CAPTCHA FAILED")}
-            }, function error(res){
+                else {
+                    console.log("CAPTCHA FAILED")
+                }
+            }, function error(res) {
                 console.log("ERROR");
                 console.log(res);
             });
@@ -47,14 +52,14 @@ app.controller('contactController', function ($scope, contactService) {
 
 }).service('contactService', function ($http) {
 
-    this.checkCaptcha = function(recaptcha){
-      var config = {
-          method: 'POST',
-          url: '/contact/checkCaptcha',
-          data: {captcha: recaptcha}
-      }
+    this.checkCaptcha = function (recaptcha) {
+        var config = {
+            method: 'POST',
+            url: '/contact/checkCaptcha',
+            data: {captcha: recaptcha}
+        }
 
-      return $http(config);
+        return $http(config);
 
     };
     this.sendEmail = function (userInfo) {

@@ -63,6 +63,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     transporter.sendMail(mailOptions, function (err, res) {
         if (err) {
             console.log(err);
+            res.send({'emailSent': false});
         } else {
             console.log('mail sent');
         }
@@ -70,7 +71,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     transporter.close();
     console.log('transporter closed');
 
-    res.send(true);
+    res.send({'emailSent': true});
 
 })
 ;
