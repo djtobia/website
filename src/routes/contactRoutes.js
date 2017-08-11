@@ -35,11 +35,9 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
         res.send("Error: " + JSON.stringify(err));
     });
 
-    httpReq.end();
+    httpsReq.end();
 
     res.send(human);
-
-
 });
 
 contactRouter.route('/sendEmail').post(function(req,res){
