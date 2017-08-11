@@ -8,9 +8,9 @@
 
     <title>Contact</title>
     <!--bower:css-->
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
-    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css'/>
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css'/>
     <!--endbower-->
     <!--inject:css-->
     <link rel="stylesheet" href="/css/main.css">
@@ -65,19 +65,22 @@
         <div class="row">
             <h3>CONTACT ME</h3>
             <div ng-if="!emailSent">
-            <form name="contactForm">
-                Email: <input type="email" class="form-control" ng-model="userInfo.email" required /><br/>
-                Name: <input type="text" class="form-control" ng-model="userInfo.name" required/> <br/>
-                Content: <textarea class="form-control" ng-model="userInfo.content" placeholder="Enter your email here"
-                                   required></textarea><br/>
-                <div class="g-recaptcha" data-sitekey="6Lc3hiwUAAAAANO74MshSxO8PlE15ha2zK7uZCa5"></div>
-                <br/>
-                <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</button>
-            </form>
+                <form name="contactForm">
+                    Email: <input type="email" class="form-control" ng-model="userInfo.email" required/><br/>
+                    Name: <input type="text" class="form-control" ng-model="userInfo.name" required/> <br/>
+                    Content: <textarea class="form-control" ng-model="userInfo.content"
+                                       placeholder="Enter your email here"
+                                       required></textarea><br/>
+                    <div class="g-recaptcha" data-sitekey="6Lc3hiwUAAAAANO74MshSxO8PlE15ha2zK7uZCa5"></div>
+                    <br/>
+                    <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</button>
+                </form>
                 <h2>{{errorMessage}}</h2>
-            <h2>{{emailSentMessage}}</h2>
-
-
+            </div>
+            <div class="row" ng-if="emailSent">
+                <div class="col-lg-10">
+                    <h2>{{emailSentMessage}}</h2>
+                </div>
             </div>
         </div>
     </div>
