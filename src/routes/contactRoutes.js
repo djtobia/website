@@ -9,30 +9,30 @@ contactRouter.route('/').get(function (req, res) {
 });
 
 contactRouter.route('/checkCaptcha').post(function (req, res) {
-    console.log(req.body);
 
     var recaptcha = new RecaptchaVerify({
         secret: '6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf',
         verbose: true
     });
-
+    var human = null;
 
     recaptcha.checkResponse(req.body.captcha, function (err, response) {
         if (err) {
             console.log(err);
-            res.send({'success': false});
+            human = false;
         }
 
-        if (response.success) {
-            human = true;
+        if (response.success && human != false) {
             console.log("passed captcha");
-            res.send({'success': true});
+            human = true;
         }
         else {
-            res.send({'success': false});
+            human = false;
         }
+
     });
 
+    res.send({'success': human});
 });
 
 contactRouter.route('/sendEmail').post(function (req, res) {
@@ -45,7 +45,9 @@ contactRouter.route('/sendEmail').post(function (req, res) {
             user: 'djtobia@gmail.com',
             clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
             clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
-            refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk'
+            refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk',
+            accessToken: 'ya29.GlukBC2IJe4ffjr3YpApPcGP8ZJIkkc6a_1Kr0Jusbm8qgsAPmZ0rxZwlr5nSlH1PtzRyfJOpBaM3EqMPyT7ZbhpyWVD7UJvD1CxCO8sXW-CPLBOjeajybAMP8CS',
+            expires: 3500
         }
     });
 
