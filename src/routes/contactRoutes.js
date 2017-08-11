@@ -41,44 +41,45 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
     res.send(human);
 });
 
-contactRouter.route('/sendEmail').post(function(req,res){
+contactRouter.route('/sendEmail').post(function (req, res) {
 
-        console.log('creating transport');
-         var transporter = NodeMailer.createTransport({
-             service: 'gmail',
-             auth: {
-                 xoauth2: xoauth2.createXOAuth2Generator({
-                     user: 'djtobia@gmail.com',
-                     clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
-                     clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
-                     refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk'
-                 })
-             }
-         });
-
-         var mailOptions = {
-             from: req.body.contact.name + ' <'+req.body.contact.email +'>',
-             to: 'djtobia@gmail.com',
-             subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
-             text: req.body.contact.content
-         };
+    console.log('creating transport');
+    var transporter = NodeMailer.createTransport({
+        service: 'gmail',
+        auth: {
+            type: 'OAuth2',
+            user: 'djtobia@gmail.com',
+            clientID: '166590923492-hr52cocstkriatem33mhqcoftdhk727g.apps.googleusercontent.com',
+            clientSecret: 'YBWm7scLk7qTyfWEXfldx58R',
+            refreshToken: '1/E7oHbHPThs7oKhS2g4xZoFU4JzCi-7VLhmRPg76KAIk',
 
 
-        console.log('transporter created');
-        console.log('transporter sending mail');
+        }});
 
-        transporter.sendMail(mailOptions,function(err, res){
-            if(err){
-                console.log(err);
-            }else {
-                console.log('mail sent');
-            }
-        });
-        transporter.close();
-        console.log('transporter closed');
+    var mailOptions = {
+        from: req.body.contact.name + ' <' + req.body.contact.email + '>',
+        to: 'djtobia@gmail.com',
+        subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM',
+        text: req.body.contact.content
+    };
 
-        res.send(true);
 
-});
+    console.log('transporter created');
+    console.log('transporter sending mail');
+
+    transporter.sendMail(mailOptions, function (err, res) {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('mail sent');
+        }
+    });
+    transporter.close();
+    console.log('transporter closed');
+
+    res.send(true);
+
+})
+;
 
 module.exports = contactRouter;
