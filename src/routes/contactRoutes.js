@@ -14,6 +14,8 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     var human = false;
     var httpsReq = https.request(' https://www.google.com/recaptcha/api/siteverify?secret=6Lc3hiwUAAAAAPQHLIWD799Jw_unIeVdSIXtQGqf&response=' + req.body.captcha,
         function (httpsRes) {
+            console.log("resposnse from google");
+            console.log(httpRes);
             var googleResponse = "";
             httpsRes.on("data", function (chunk) {
                 googleResponse += chunk;
