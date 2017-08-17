@@ -33,6 +33,9 @@ app.controller('insertController', function ($scope, projectService) {
             }
         };
 
+        $scope.updateresume = function(){
+
+        };
         projectService.addToDB(config).then(function success(req, res) {
             console.log(res);
         }, function error(req, res) {
@@ -46,5 +49,8 @@ app.controller('insertController', function ($scope, projectService) {
 }).service('projectService',function($http){
     this.addToDB = function(config){
         return $http(config);
+    };
+    this.updateResume = function(){
+        return $http.post('/admin/updateResume');
     }
 });

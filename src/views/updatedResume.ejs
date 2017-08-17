@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Contact</title>
+    <title>Updated Resume</title>
     <!--bower:css-->
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
@@ -19,22 +19,22 @@
 
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
+
 
 </head>
 
-<body data-spy="scroll" data-offset="0" data-target="#theMenu" ng-app="contactApp" ng-controller="contactController">
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
 
 <!-- Menu -->
 <nav class="menu" id="theMenu">
     <div class="menu-wrap">
-        <h1 class="logo"><a href="#home" class="smoothScroll">Contact Me</a></h1>
+        <h1 class="logo"><a href="#home" class="smoothScroll">Dylan Tobia</a></h1>
         <i class="icon-remove menu-close"></i>
         <a href="/" class="smoothScroll">Home</a>
         <a href="/about" class="smoothScroll">About</a>
         <a href="/projects" class="smoothScroll">Projects</a>
-        <a href="#contact" class="smoothScroll">Contact</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
+        <a href="/contact" class="smoothScroll">Contact</a>
+        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
     </div>
 
     <!-- Menu button -->
@@ -58,31 +58,26 @@
 </div><!-- /headerwrap -->
 
 
-<!-- ========== CONTACT SECTION ========== -->
-<section id="contact" name="contact"></section>
+<!-- ========== ABOUT SECTION ========== -->
+<section id="resume" name="resume"></section>
 <div id="f">
     <div class="container">
         <div class="row">
-            <h3>CONTACT ME</h3>
-            <div ng-if="!emailSent">
-                <form name="contactForm">
-                    Email: <input type="email" class="form-control" ng-model="userInfo.email" placeholder="Email" required/><br/>
-                    Name: <input type="text" class="form-control" ng-model="userInfo.name" placeholder="Name" required/> <br/>
-                    Content: <textarea class="form-control" ng-model="userInfo.content"
-                                       placeholder="Enter your message here"
-                                       required></textarea><br/>
-                    <!--<div class="g-recaptcha" data-sitekey="6Lc3hiwUAAAAANO74MshSxO8PlE15ha2zK7uZCa5"></div>--><!-- un comment for captcah functionality-->
-                    <br/>
-                    <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</button>
-                </form>
-                <h2>{{errorMessage}}</h2>
-            </div>
-            <div class="row" ng-if="emailSent">
-                <h2>{{emailSentMessage}}</h2>
+            <h3>UPDATED RESUME</h3>
+            <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
+                        class="icon icon-circle"></i></p>
+
+            <!-- INTRO INFORMATIO-->
+            <div class="col-lg-6 col-lg-offset-3">
+                <p>
+                    <a href="/resume">
+                        <button type="button" class="btn btn-warning">View Resume Here</button>
+                    </a>
+                </p>
             </div>
         </div>
-    </div>
-</div>
+    </div><!-- /container -->
+</div><!-- /f -->
 
 
 <!-- Bootstrap core JavaScript
