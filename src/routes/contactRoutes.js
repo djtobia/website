@@ -43,7 +43,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         service: 'Gmail',
         auth: {
             user: 'djtobia@gmail.com',
-            pass: 'KingsCross1025'
+            pass: 'King\'s Cross 1025!'
         }
     }));
 
