@@ -12,7 +12,7 @@ var authRouter = require('./src/routes/authRoutes');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var passport = require('passport');
-var session = require('express-session');
+var session = require('cookie-session');
 
 
 app.use(bodyParser.json());
