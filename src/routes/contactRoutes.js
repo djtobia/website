@@ -43,7 +43,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         service: 'Gmail',
         auth: {
             user: 'djtobia@gmail.com',
-            pass: "King's Cross 1025!"
+            pass: 'King\'s Cross 1025!'
         }
     }));
 
@@ -62,6 +62,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
         if (err) {
             console.log(err);
+            console.log('transporter failed');
             res.send({'emailSent' : false});
         } else {
             console.log('mail sent');
