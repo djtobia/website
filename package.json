@@ -23,8 +23,7 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "pdfjs": "^2.0.0-alpha.3",
-    "recaptcha-verify": "^0.1.1",
-    "xoauth2": "file:node_modules\\xoauth2"
+    "recaptcha-verify": "^0.1.1"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
