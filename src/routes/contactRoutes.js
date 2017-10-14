@@ -2,7 +2,7 @@ var express = require('express');
 var contactRouter = express.Router();
 var NodeMailer = require('nodemailer');
 var RecaptchaVerify = require('recaptcha-verify');
-
+var smtpTransport = require('nodemailer-smtp-transport');
 
 contactRouter.route('/').get(function (req, res) {
     res.render('contact');
@@ -40,7 +40,7 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
 contactRouter.route('/sendEmail').post(function (req, res) {
 
     console.log('creating transport');
-    var transporter = NodeMailer.createTransport("SMTP",{
+    var transporter = NodeMailer.createTransport(smtpTransport({
         service: 'Gmail',
         auth: {
                 user: 'djtobia@gmail.com',
@@ -48,7 +48,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
             }
 
-    });
+    }));
 
     var mailOptions = {
         from: req.body.contact.name + ' <' + req.body.contact.email + '>',
