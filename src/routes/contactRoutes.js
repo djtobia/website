@@ -44,7 +44,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         service: 'Gmail',
         auth: {
                 user: 'dylantobiawebsite@gmail.com',
-                pass: 'travian123'
+                pass: 'K1ng\'s Cross 1025!'
 
             }
 
