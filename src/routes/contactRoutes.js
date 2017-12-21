@@ -71,8 +71,8 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
         }
     });
-    // transporter.close();
-    // console.log('transporter closed');
+    transporter.close();
+    console.log('transporter closed');
 
     res.send({'emailSent': true});
 
