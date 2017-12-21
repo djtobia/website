@@ -40,15 +40,15 @@ contactRouter.route('/checkCaptcha').post(function (req, res) {
 contactRouter.route('/sendEmail').post(function (req, res) {
 
     console.log('creating transport');
-    var transporter = NodeMailer.createTransport({
-        service: 'gmail',
+    var transporter = NodeMailer.createTransport(smtpTransport({
+        service: 'Gmail',
         auth: {
                 user: 'dylantobiawebsite@gmail.com',
                 pass: 'King\'s Cross 1025!'
 
             }
 
-    });
+    }));
 
     var mailOptions = {
         from: req.body.contact.name + ' <' + req.body.contact.email + '>',
