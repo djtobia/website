@@ -43,7 +43,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     var transporter = NodeMailer.createTransport(smtpTransport({
         service: 'Gmail',
         auth: {
-                user: 'dylantobiawebsite',
+                user: 'dylantobiawebsite@gmail.com',
                 pass: 'King\'s Cross 1025!'
 
             }
