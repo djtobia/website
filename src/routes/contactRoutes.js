@@ -41,7 +41,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
     console.log('creating transport');
     var transporter = NodeMailer.createTransport({
-        service: 'Gmail',
+        service: 'gmail',
         auth: {
                 user: 'dylantobiawebsite@gmail.com',
                 pass: 'King\'s Cross 1025!'
@@ -71,8 +71,8 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
         }
     });
-    transporter.close();
-    console.log('transporter closed');
+    // transporter.close();
+    // console.log('transporter closed');
 
     res.send({'emailSent': true});
 
