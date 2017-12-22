@@ -19,21 +19,30 @@ app.controller('contactController', function ($scope, contactService) {
         // if (recaptcha.length != 0) {
         //     contactService.checkCaptcha(recaptcha).then(function success(res) {
         //         if (res.data.success) {
-        contactService.sendEmail($scope.userInfo).then(function success(res) {
-                console.log(res.data);
-                if (res.data.emailSent) {
-                    $scope.emailSent = true;
-                    $scope.emailSentMessage = "Your email has been sent.";
-                    $scope.errorMessage = null;
-                } else {
-                    $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
-                }
-            }, function error(res) {
-                console.log(res);
-                console.log('problem sending email');
-                $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
-            }
-        );
+        //
+        //         if (res.data.emailSent) {
+        //             $scope.emailSent = true;
+        //             $scope.emailSentMessage = "Your email has been sent.";
+        //             $scope.errorMessage = null;
+        //         } else {
+        //
+        //         }
+        //     }, function error(res) {
+        //         console.log(res);
+        //         console.log('problem sending email');
+        //         $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
+        //     }
+        // );
+        emailjs.send("gmail","template",{reply_to: req.body.contact.email, from_name: req.body.contact.name, message: req.body.contact.content}).then(function(resposne){
+            console.log("Email Sent");
+            $scope.emailSent = true;
+            $scope.emailSentMessage = "Your email has ben sent.";
+            $scope.errorMessage = null;
+        }, function(err){
+            console.log(err);
+            console.log("Email Failed");
+            $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
+        });
 
         // else {
         //     console.log("CAPTCHA FAILED")
@@ -62,12 +71,5 @@ app.controller('contactController', function ($scope, contactService) {
         return $http(config);
 
     };
-    this.sendEmail = function (userInfo) {
-        var config = {
-            method: 'POST',
-            url: '/contact/sendEmail',
-            data: {contact: userInfo}
-        };
-        return $http(config);
-    }
+
 });
