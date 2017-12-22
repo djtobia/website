@@ -13,6 +13,7 @@ app.controller('contactController', function ($scope, contactService) {
             $scope.errorMessage = "You must complete the form";
             return;
         }
+        $scope.emailSent = true;
         //remove all // from comments for captcha functionality
         //var recaptcha = grecaptcha.getResponse(); un comment for captcah
 
@@ -35,11 +36,12 @@ app.controller('contactController', function ($scope, contactService) {
         // );
         emailjs.send("gmail","template",{reply_to: $scope.userInfo.email, from_name: $scope.userInfo.name, message: $scope.userInfo.content}).then(function success(response){
             console.log("Email Sent");
-            $scope.emailSent = true;
+
             $scope.emailSentMessage = "Your email has been sent.";
             $scope.errorMessage = null;
         }, function error (err){
             console.log(err);
+            $scope.emailSent = false;
             console.log("Email Failed");
             $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
         });
