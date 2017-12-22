@@ -2,39 +2,20 @@ var express = require('express');
 var contactRouter = express.Router();
 var NodeMailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
-var emailjs = require('emailjs/email');
 
 contactRouter.route('/').get(function (req, res) {
     res.render('contact');
 });
 
 contactRouter.route('/sendEmail').post(function (req, res) {
+    initEmailJs();
 
-    var server = emailjs.server.connect({
-        user: "dylantobiawebsite@gmail.com",
-        password: "King's Cross 1025!",
-        ssl: true,
-        host: "smtp.gmail.com",
-        authentication: 'PLAIN'
+    emailjs.send("gmail","template",{reply_to: req.body.contact.email, from_name: req.body.contact.name, message: req.body.contact.content}).then(function(resposne){
+        console.log("Email Sent");
+    }, function(err){
+        console.log(err);
+        console.log("Email Failed");
     });
-    var message = {
-        text: req.body.contact.content,
-        from: req.body.contact.email,
-        to: "djtobia@gmail.com",
-        subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM'
-    };
-
-    console.log("before sending message");
-    server.send(message,function(err,message) {
-        console.log(err || message);
-    });
-    console.log("after sending message");
-    // emailjs.send("gmail","template",{reply_to: req.body.contact.email, from_name: req.body.contact.name, message: req.body.contact.content}).then(function(resposne){
-    //     console.log("Email Sent");
-    // }, function(err){
-    //     console.log(err);
-    //     console.log("Email Failed");
-    // });
     // console.log('creating transport');
     // var transporter = NodeMailer.createTransport(smtpTransport({
     //     service: 'Gmail',
@@ -73,5 +54,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     res.send({'emailSent': true});
 
 });
-
+function initEmailJs(){
+    emailjs.init("user_bMhU28xa1T0bBT1EfG7Ad");
+}
 module.exports = contactRouter;
