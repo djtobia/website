@@ -38,7 +38,7 @@ app.controller('contactController', function ($scope, contactService) {
             $scope.emailSent = true;
             $scope.emailSentMessage = "Your email has been sent.";
             $scope.errorMessage = null;
-        }, functionerror (err){
+        }, function error (err){
             console.log(err);
             console.log("Email Failed");
             $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
