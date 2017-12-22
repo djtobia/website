@@ -3,7 +3,7 @@
  */
 var app = angular.module("contactApp", []);
 app.controller('contactController', function ($scope, contactService) {
-    $scope, emailSent = false;
+    $scope.emailSent = false;
     $scope.errorMessage = null;
     $scope.emailSentMessage = null;
     $scope.userInfo = {'email': null, 'content': null, 'name': null};
@@ -33,7 +33,7 @@ app.controller('contactController', function ($scope, contactService) {
         //         $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
         //     }
         // );
-        emailjs.send("gmail","template",{reply_to: req.body.contact.email, from_name: req.body.contact.name, message: req.body.contact.content}).then(function(resposne){
+        emailjs.send("gmail","template",{reply_to: $scope.userInfo.email, from_name: $scope.userInfo.name, message: $scope.userInfo.content}).then(function(resposne){
             console.log("Email Sent");
             $scope.emailSent = true;
             $scope.emailSentMessage = "Your email has ben sent.";
