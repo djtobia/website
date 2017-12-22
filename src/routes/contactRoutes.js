@@ -12,6 +12,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     var server = emailjs.server.connect({
         user: "dylantobiawebsite@gmail.com",
         password: "King's Cross 1025!",
+        ssl: true,
         host: "smtp.gmail.com",
         authentication: 'PLAIN'
     });
