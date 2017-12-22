@@ -33,12 +33,12 @@ app.controller('contactController', function ($scope, contactService) {
         //         $scope.errorMessage = 'There has been an error sending your email. Please try again later, or manually send an email to dylan@dylantobia.com, with the subject line "dylantobia.com contact"';
         //     }
         // );
-        emailjs.send("gmail","template",{reply_to: $scope.userInfo.email, from_name: $scope.userInfo.name, message: $scope.userInfo.content}).then(function(resposne){
+        emailjs.send("gmail","template",{reply_to: $scope.userInfo.email, from_name: $scope.userInfo.name, message: $scope.userInfo.content}).then(function success(response){
             console.log("Email Sent");
             $scope.emailSent = true;
-            $scope.emailSentMessage = "Your email has ben sent.";
+            $scope.emailSentMessage = "Your email has been sent.";
             $scope.errorMessage = null;
-        }, function(err){
+        }, functionerror (err){
             console.log(err);
             console.log("Email Failed");
             $scope.errorMessage = 'There was a problem sending your email. Please try again later.';
