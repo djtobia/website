@@ -16,7 +16,7 @@ contactRouter.route('/sendEmail').post(function (req, res) {
     });
     var message = {
         text: req.body.contact.content,
-        from: req.body.conact.email,
+        from: req.body.contact.email,
         to: "djtobia@gmail.com",
         subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM'
     };
