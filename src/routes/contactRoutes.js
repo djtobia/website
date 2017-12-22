@@ -3,6 +3,7 @@ var contactRouter = express.Router();
 var NodeMailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var emailjs = require('emailjs/email');
+
 contactRouter.route('/').get(function (req, res) {
     res.render('contact');
 });
@@ -23,9 +24,11 @@ contactRouter.route('/sendEmail').post(function (req, res) {
         subject: 'CONTACT FROM ' + req.body.contact.name + ' <' + req.body.contact.email + '>' + ' DYLANTOBIA.COM'
     };
 
+    console.log("before sending message");
     server.send(message,function(err,message) {
         console.log(err || message);
     });
+    console.log("after sending message");
     // emailjs.send("gmail","template",{reply_to: req.body.contact.email, from_name: req.body.contact.name, message: req.body.contact.content}).then(function(resposne){
     //     console.log("Email Sent");
     // }, function(err){
@@ -69,7 +72,6 @@ contactRouter.route('/sendEmail').post(function (req, res) {
 
     res.send({'emailSent': true});
 
-})
-;
+});
 
 module.exports = contactRouter;
