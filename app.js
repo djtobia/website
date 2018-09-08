@@ -39,6 +39,7 @@ app.use('/projects', projectRouter);
 app.use('/admin', adminRouter);
 app.use('/contact', contactRouter);
 app.use('/auth', authRouter);
+app.use('/extras', extrasRouter);
 app.get('/', function (req, res) {
     var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
     mongodb.connect(url, function (err, db) {
