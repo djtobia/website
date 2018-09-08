@@ -9,6 +9,7 @@ var projectRouter = require('./src/routes/projectRoutes');
 var adminRouter = require('./src/routes/adminRoutes');
 var contactRouter = require('./src/routes/contactRoutes');
 var authRouter = require('./src/routes/authRoutes');
+var extrasRouter = require('./src/routes/extrasRoutes');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var passport = require('passport');
