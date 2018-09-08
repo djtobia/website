@@ -4,22 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/views/index.ejs" line="128" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="015be552-4d96-46e4-b38c-30ad7aafcf38" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/routes/extrasRoutes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/extras.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/about.ejs" afterPath="$PROJECT_DIR$/src/views/about.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/accessDenied.ejs" afterPath="$PROJECT_DIR$/src/views/accessDenied.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/contact.ejs" afterPath="$PROJECT_DIR$/src/views/contact.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/error.ejs" afterPath="$PROJECT_DIR$/src/views/error.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/index.ejs" afterPath="$PROJECT_DIR$/src/views/index.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/login.ejs" afterPath="$PROJECT_DIR$/src/views/login.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/logout.ejs" afterPath="$PROJECT_DIR$/src/views/logout.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/projectView.ejs" afterPath="$PROJECT_DIR$/src/views/projectView.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/projects.ejs" afterPath="$PROJECT_DIR$/src/views/projects.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/updatedProjects.ejs" afterPath="$PROJECT_DIR$/src/views/updatedProjects.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/utilities.ejs" afterPath="$PROJECT_DIR$/src/views/utilities.ejs" />
-    </list>
+    <list default="true" id="015be552-4d96-46e4-b38c-30ad7aafcf38" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -119,8 +104,8 @@
       <file leaf-file-name="utilities.ejs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/views/utilities.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+            <state relative-caret-position="425">
+              <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -172,6 +157,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <push-targets>
+      <push-target-info target-remote="heroku" target-branch="master" repo="$PROJECT_DIR$" source="master" />
+    </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -593,12 +581,12 @@
       <workItem from="1516938743962" duration="599000" />
       <workItem from="1517105260340" duration="594000" />
       <workItem from="1533589376315" duration="767000" />
-      <workItem from="1536442927487" duration="337000" />
+      <workItem from="1536442927487" duration="774000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88811000" />
+    <option name="totallyTimeSpent" value="89248000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -973,8 +961,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/utilities.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="10" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+        <state relative-caret-position="425">
+          <caret line="25" column="63" lean-forward="true" selection-start-line="25" selection-start-column="63" selection-end-line="25" selection-end-column="63" />
           <folding />
         </state>
       </provider>
