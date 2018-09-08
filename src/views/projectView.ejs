@@ -28,13 +28,14 @@
 <!-- Menu -->
 <nav class="menu" id="theMenu">
     <div class="menu-wrap">
-        <h1 class="logo"><a href="#home" class="smoothScroll">Projects</a></h1>
+        <h1 class="logo"><a href="#home" class="smoothScroll">Dylan Tobia</a></h1>
         <i class="icon-remove menu-close"></i>
-        <a href="/">Home</a>
+        <a href="/" class="smoothScroll">Home</a>
         <a href="/about" class="smoothScroll">About</a>
         <a href="/projects" class="smoothScroll">Projects</a>
         <a href="/contact" class="smoothScroll">Contact</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login"%></a>
+        <a href="/extras" class="smoothScroll">Extras</a>
+        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
     <!-- Menu button -->
