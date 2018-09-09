@@ -8,9 +8,9 @@
 
     <title>Dylan Tobia</title>
     <!--bower:css-->
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
-    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
-    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css' />
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css'/>
+    <link rel='stylesheet' href='/lib/font-awesome/css/font-awesome.min.css'/>
     <!--endbower-->
     <!--inject:css-->
     <link rel="stylesheet" href="/css/main.css">
@@ -23,7 +23,6 @@
     <script src="/lib/jquery/dist/jquery.js"></script>
 
 
-
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#theMenu">
@@ -34,10 +33,10 @@
         <h1 class="logo"><a href="#home" class="smoothScroll">Dylan Tobia</a></h1>
         <i class="icon-remove menu-close"></i>
         <a href="/" class="smoothScroll">Home</a>
-        <a href="/about" class="smoothScroll">About</a>
-        <a href="/projects" class="smoothScroll">Projects</a>
-        <a href="/contact" class="smoothScroll">Contact</a>
-        <a href="/extras" class="smoothScroll">Extras</a>
+        <a href="#about" class="smoothScroll">About</a>
+        <a href="#projects" class="smoothScroll">Projects</a>
+        <a href="#contact" class="smoothScroll">Contact</a>
+        <a href="#extras" class="smoothScroll">Extras</a>
         <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
@@ -169,45 +168,45 @@
             </div>
         </div>
     </div>
+</div>
 
+<section id="extras" name="extras"></section>
+<div id="f">
+    <div class="container">
+        <div class="row">
+            <h3>EXTRA STUFF</h3>
+            <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
+                        class="icon icon-circle"></i></p>
 
-    <section id="extras" name="extras"></section>
-    <div id="f">
-        <div class="container">
-            <div class="row">
-                <h3>EXTRA STUFF</h3>
-                <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
-                            class="icon icon-circle"></i></p>
-
-                <div class="col-lg-6 col-lg-offset-3">
-                    <p>
-                        <a href="/extras">
-                            <button type="button" class="btn btn-warning">Click here to go to my extras page!</button>
-                        </a>
-                    </p>
-                </div>
+            <div class="col-lg-6 col-lg-offset-3">
+                <p>
+                    <a href="/extras">
+                        <button type="button" class="btn btn-warning">Click here to go to my extras page!</button>
+                    </a>
+                </p>
             </div>
         </div>
     </div>
+</div>
 
 
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <!--bower:js-->
-<script src="/lib/jquery/dist/jquery.js"></script>
-<script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
-<script src="/lib/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.js"></script>
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
 <!--endbower-->
 
 
 <!--inject:js-->
-<script src="/js/classie.js"></script>
-<script src="/js/contact.js"></script>
-<script src="/js/insertProjectApp.js"></script>
-<script src="/js/main.js"></script>
-<script src="/js/smoothscroll.js"></script>
-<script src="/js/userApp.js"></script>
+<script type="text/javascript" src="/js/classie.js"></script>
+<script type="text/javascript" src="/js/contact.js"></script>
+<script type="text/javascript" src="/js/insertProjectApp.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/smoothscroll.js"></script>
+<script type="text/javascript" src="/js/userApp.js"></script>
 <!--endinject-->
 
 
