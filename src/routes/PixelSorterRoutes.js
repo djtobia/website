@@ -34,53 +34,58 @@ pixelSorterRouter.route('/')
     });
 
 pixelSorterRouter.route('/upload').post(function(req,res,next) {
-    if(req.file == null){
-       return res.render("mustUploadFile");
-    }
-    console.log("posted to /upload");
-    upload(req, res, function (err) {
-        if (err) {
-            return res.end("There was a problem uploading your file");
-        }
 
-    console.log(req.file.originalname + " has been uploaded");
-        exec('java -jar public/jars/PixelSorter.jar uploads/' + req.file.originalname,
-            function (error, stdout, stderr) {
-                console.log("Ran Program");
-                if (error != null) {
-                    console.log(error);
-                }
+        console.log("posted to /upload");
+        upload(req, res, function (err) {
+            console.log(req.file);
+            if(req.file == null){
+                res.render("mustUploadFile");
+                return;
+            }
 
-                var options = {
-                    root: "uploads/",
-                    dotfiles: 'deny',
-                    headers: {
-                        'x-timestamp': Date.now(),
-                        'x-sent': true
+            if (err) {
+                return res.end("There was a problem uploading your file");
+            }
+
+            console.log(req.file.originalname + " has been uploaded");
+            exec('java -jar public/jars/PixelSorter.jar uploads/' + req.file.originalname,
+                function (error, stdout, stderr) {
+                    console.log("Ran Program");
+                    if (error != null) {
+                        console.log(error);
                     }
-                };
-                 var filenames = getFileNames(req.file.originalname);
 
-                if(req.body.sortType == "gradient"){
-                res.sendFile(filenames[0],options, function(err){
-                    if(err){
-                        console.log("There was a problem sending you file " + filenames[0]);
-                    }
-                    deleteFiles(filenames);
-                });}
-                else {
-                    res.sendFile(filenames[1], options, function (err) {
-                        if (err) {
-                            console.log("There was a problem sending you file " + filenames[1]);
+                    var options = {
+                        root: "uploads/",
+                        dotfiles: 'deny',
+                        headers: {
+                            'x-timestamp': Date.now(),
+                            'x-sent': true
                         }
-                        deleteFiles(filenames);
-                    })
-                }
+                    };
+                    var filenames = getFileNames(req.file.originalname);
 
-            });
+                    if (req.body.sortType == "gradient") {
+                        res.sendFile(filenames[0], options, function (err) {
+                            if (err) {
+                                console.log("There was a problem sending you file " + filenames[0]);
+                            }
+                            deleteFiles(filenames);
+                        });
+                    }
+                    else {
+                        res.sendFile(filenames[1], options, function (err) {
+                            if (err) {
+                                console.log("There was a problem sending you file " + filenames[1]);
+                            }
+                            deleteFiles(filenames);
+                        })
+                    }
+
+                });
 
 
-    });
+        });
 
 });
 function deleteFiles(filenames){
