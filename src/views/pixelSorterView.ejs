@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Utilities</title>
+    <title>Projects By Dylan Tobia</title>
     <!--bower:css-->
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
@@ -50,8 +50,9 @@
     <div class="container">
         <br>
         <div class="row">
-            <h1>Utilities</h1>
+            <h1>Projects</h1>
             <br>
+            <h3>Some of my Projects</h3>
             <div class="col-lg-6 col-lg-offset-3">
             </div>
         </div>
@@ -59,16 +60,17 @@
 </div><!-- /headerwrap -->
 
 
-<section id="utils" name="utils"></section>
+<section id="projects" name="projects"></section>
 <div id="f">
     <div class="container">
         <div class="row centered">
             <div class="col-lg-6 col-lg-offset-3">
-                <h3>User Utilities</h3>
-                <p></p>
-                <p><a href="/admin/addProject">
-                        <button class="btn btn-warning">Add Project</button>
-                    </a></p>
+                <h3><%= project.name %></h3><br/>
+                <p><%= project.longDesc %></p>
+                <a href="<%= project.link %>" target="_blank">Github Repository</a><br/><br />
+                <img class="<%= project.fileName ? "projectImage" : "noImage" %>"
+                     src="<%= "/images/"+project.fileName %>"/><br/>
+                <p> To see it in action, click <a href="/pixelSorter">here</a>!</p>
             </div><!-- col-lg-8 -->
         </div><!-- row -->
     </div><!-- container -->

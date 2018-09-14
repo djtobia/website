@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Utilities</title>
+    <title>PIXEL SORTER</title>
     <!--bower:css-->
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap-theme.css' />
@@ -50,8 +50,9 @@
     <div class="container">
         <br>
         <div class="row">
-            <h1>Utilities</h1>
+            <h1>Dylan Tobia</h1>
             <br>
+            <h3>Software Engineer</h3>
             <div class="col-lg-6 col-lg-offset-3">
             </div>
         </div>
@@ -59,20 +60,31 @@
 </div><!-- /headerwrap -->
 
 
-<section id="utils" name="utils"></section>
+<!-- ========== ABOUT SECTION ========== -->
+<section id="about" name="about"></section>
 <div id="f">
     <div class="container">
-        <div class="row centered">
+        <div class="row">
+            <h3>PIXEL SORTER</h3>
+            <p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i
+                        class="icon icon-circle"></i></p>
+
+            <!-- INTRO INFORMATIO-->
             <div class="col-lg-6 col-lg-offset-3">
-                <h3>User Utilities</h3>
-                <p></p>
-                <p><a href="/admin/addProject">
-                        <button class="btn btn-warning">Add Project</button>
-                    </a></p>
-            </div><!-- col-lg-8 -->
-        </div><!-- row -->
-    </div><!-- container -->
-</div>    <!-- f -->
+                <p>Upload a .jpg, .jpeg, .bmp, .png, .gif, and see what the image looks like with its pixels sorted!</p></br>
+                <p>It make take a little bit for the image to be sorted, please be patient.</p>
+            <div class="col-lg-6 col-lg-offset-3"><form type="submit" action="pixelSorter/upload" method="post" enctype="multipart/form-data">
+                    <input type="file" name="image"/></br>
+                    <input type="radio" name="sortType" value="gradient"/> Gradient Sort </br>
+                    <input type="radio" name="sortType" value="regular" checked> Regular Sort </br>
+                    <input type="submit"></br>
+                </form></div>
+                </br></br></br>
+
+            </div>
+        </div>
+    </div><!-- /container -->
+</div><!-- /f -->
 
 
 <!-- Bootstrap core JavaScript

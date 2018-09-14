@@ -24,6 +24,9 @@ router.route('/:id')
             var collection = db.collection('projects');
 
             collection.findOne({_id : id},function (err, results) {
+                if(results.name == "Pixel Sorter") {
+                    res.render('pixelSorterView', {project: results});
+                }else
                 res.render('projectView',{project: results});
             });
         });
