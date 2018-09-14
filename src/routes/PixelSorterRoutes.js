@@ -35,7 +35,7 @@ pixelSorterRouter.route('/')
 
 pixelSorterRouter.route('/upload').post(function(req,res,next) {
     if(req.file == null){
-       return res.end("You must upload a file");
+       return res.render("mustUploadFile");
     }
     console.log("posted to /upload");
     upload(req, res, function (err) {
