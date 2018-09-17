@@ -78,7 +78,7 @@ pixelSorterRouter.route('/upload').post(function(req,res,next) {
                             }
                             deleteFiles(filenames);
                         });
-                   
+
 
                 });
 

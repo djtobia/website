@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="015be552-4d96-46e4-b38c-30ad7aafcf38" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/uploads/empty.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/routes/PixelSorterRoutes.js" afterPath="$PROJECT_DIR$/src/routes/PixelSorterRoutes.js" />
     </list>
@@ -91,8 +89,8 @@
       <file leaf-file-name="PixelSorterRoutes.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/PixelSorterRoutes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+            <state relative-caret-position="-340">
+              <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -488,12 +486,12 @@
       <workItem from="1536903045351" duration="354000" />
       <workItem from="1536903468916" duration="855000" />
       <workItem from="1536960352295" duration="663000" />
-      <workItem from="1537144314615" duration="1891000" />
+      <workItem from="1537144314615" duration="2095000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108984000" />
+    <option name="totallyTimeSpent" value="109188000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -737,7 +735,7 @@
         <state relative-caret-position="119">
           <caret line="39" column="68" lean-forward="true" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="68" />
           <folding>
-            <marker date="1537145425592" expanded="true" signature="8298:8355" ph="..." />
+            <marker date="1537146330712" expanded="true" signature="8298:8355" ph="..." />
           </folding>
         </state>
       </provider>
@@ -878,8 +876,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/PixelSorterRoutes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="80" column="19" lean-forward="false" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+        <state relative-caret-position="-340">
+          <caret line="90" column="25" lean-forward="true" selection-start-line="90" selection-start-column="25" selection-end-line="90" selection-end-column="25" />
           <folding />
         </state>
       </provider>
