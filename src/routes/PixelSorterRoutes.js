@@ -48,7 +48,7 @@ pixelSorterRouter.route('/upload').post(function(req,res,next) {
             }
 
             console.log(req.file.originalname + " has been uploaded");
-            exec('java -jar public/jars/PixelSorter.jar uploads/' + req.file.originalname,
+            exec('java -jar public/jars/PixelSorter.jar uploads/' + req.file.originalname + " " +req.body.sortType,
                 function (error, stdout, stderr) {
                     console.log("Ran Program");
                     if (error != null) {
