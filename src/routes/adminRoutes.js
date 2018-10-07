@@ -3,7 +3,7 @@ var adminRouter = express.Router();
 var mongodb = require('mongodb').MongoClient;
 var fs = require('fs');
 
-var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
+var url = REDACTED;
 adminRouter.route('/addProject')
     .get(function (req, res) {
         if (!req.user) {
