@@ -14,14 +14,14 @@ var pixelSorterRouter = require('./src/routes/PixelSorterRoutes');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var session = require('cookie-session');
-
+var passport = require('passport');
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
 app.use(cookieParser());
-app.use(session({secret: 'djtobia'}));
+app.use(session({secret: REDACTED}));
 require('./src/config/passport')(app);
 app.use(function (req, res, next) {
     res.locals.user = req.user;
