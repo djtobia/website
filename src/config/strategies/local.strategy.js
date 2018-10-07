@@ -10,7 +10,7 @@ module.exports = function () {
         },
         function (username, password, done) {
 
-            var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
+            var url = REDACTED;
             mongodb.connect(url, function (err, db) {
                 var collection = db.collection('users');
                 collection.findOne({username: username},
