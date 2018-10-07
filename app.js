@@ -13,16 +13,8 @@ var extrasRouter = require('./src/routes/extrasRoutes');
 var pixelSorterRouter = require('./src/routes/PixelSorterRoutes');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
-var passport = require('passport');
 var session = require('cookie-session');
-//var exec = require('child_process').exec;
-//var child = exec('java -jar D:/Dylan/Documents/PixelSorter/out/artifacts/PixelSorter_jar/PixelSorter.jar C:/Users/Dylan/Desktop/excellent.bmp',
-//     function(error,stdout,stderr){
-//         console.log("Ran program");
-//         if(error != null){
-//             console.log("THere was an error " + error);
-//         }
-// });
+
 
 
 app.use(bodyParser.json());
@@ -52,7 +44,7 @@ app.use('/auth', authRouter);
 app.use('/extras', extrasRouter);
 app.use('/pixelSorter', pixelSorterRouter);
 app.get('/', function (req, res) {
-    var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
+    var url = REDACTED;
     mongodb.connect(url, function (err, db) {
         var collection = db.collection('projects');
 
