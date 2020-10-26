@@ -19,17 +19,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=EB+Garamond' rel='stylesheet' type='text/css'>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function(){
-            emailjs.init("user_bMhU28xa1T0bBT1EfG7Ad");
-        })();
-    </script>
 
 </head>
 
-<body data-spy="scroll" data-offset="0" data-target="#theMenu" ng-app="contactApp" ng-controller="contactController">
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
 
 <!-- Menu -->
 <nav class="menu" id="theMenu">
@@ -42,7 +35,6 @@
         <a href="/contact" class="smoothScroll">Contact</a>
         <a href="/extras" class="smoothScroll">Extras</a>
         <a href="/pixelSorter" class="smoothScroll">Pixel Sorter</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
     <!-- Menu button -->
@@ -72,22 +64,7 @@
     <div class="container">
         <div class="row">
             <h3>CONTACT ME</h3>
-            <div ng-if="!emailSent">
-                <form name="contactForm">
-                    Email: <input type="email" class="form-control" ng-model="userInfo.email" placeholder="Email" required/><br/>
-                    Name: <input type="text" class="form-control" ng-model="userInfo.name" placeholder="Name" required/> <br/>
-                    Content: <textarea class="form-control" ng-model="userInfo.content"
-                                       placeholder="Enter your message here"
-                                       required></textarea><br/>
-                    <!--<div class="g-recaptcha" data-sitekey="6Lc3hiwUAAAAANO74MshSxO8PlE15ha2zK7uZCa5"></div>--><!-- un comment for captcah functionality-->
-                    <br/>
-                    <button class="btn btn-warning" ng-click="sendEmail(contactForm)">Contact Me</button>
-                </form>
-                <h2>{{errorMessage}}</h2>
-            </div>
-            <div class="row" ng-if="emailSent">
-                <h2>{{emailSentMessage}}</h2>
-            </div>
+            <p>I check my email often, so feel free to send me an email <a href="mailto:djtobia@gmail.com">here!</a></p>
         </div>
     </div>
 </div>
@@ -109,7 +86,6 @@
 <script src="/js/insertProjectApp.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/smoothscroll.js"></script>
-<script src="/js/userApp.js"></script>
 <!--endinject-->
 
 

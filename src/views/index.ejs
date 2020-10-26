@@ -38,7 +38,6 @@
         <a href="/contact" class="smoothScroll">Contact</a>
         <a href="/extras" class="smoothScroll">Extras</a>
         <a href="/pixelSorter" class="smoothScroll">Pixel Sorter</a>
-        <a href=<%= user ? "/auth/logout" : "/auth/login" %>><%= user ? "Logout" : "Login" %></a>
     </div>
 
     <!-- Menu button -->
@@ -115,7 +114,7 @@
                         <div class="item centered">
                             <h3><%= projects[i].name %></h3>
                             <p><%= projects[i].desc %></p>
-                            <a href="/projects/<%= projects[i]._id %>">More Information</a><br/>
+                            <a href="/projects/<%= projects[i].id %>">More Information</a><br/>
                             <a href="<%= projects[i].link %>">Github Repository</a>
                             <br/><br/>
                             <%- images[i] %>
@@ -126,7 +125,7 @@
                         <div class="item centered">
                             <h3><%= projects[i].name %></h3>
                             <p><%= projects[i].desc %></p>
-                            <a href="/projects/<%= projects[i]._id %>">More Information</a><br/>
+                            <a href="/projects/<%= projects[i].id %>">More Information</a><br/>
                             <a href="<%= projects[i].link %>">Github Repository</a>
                             <br/><br/>
                             <%- images[i] %>
@@ -209,7 +208,6 @@
 <script src="/js/insertProjectApp.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/smoothscroll.js"></script>
-<script src="/js/userApp.js"></script>
 <!--endinject-->
 
 

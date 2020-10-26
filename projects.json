@@ -7,6 +7,24 @@
     "fileName": "RiskSplash.jpg",
     "longDesc": "A Risk clone made during a class at my University. I was part of a four person group. I mostly dealt with the AI aspect of the game."
   },
+  "p6": {
+    "id": "59877dc77df2da2760bbb4a4",
+    "name": "Pixel Sorter",
+    "desc": "An image modifier",
+    "link": "https://github.com/djtobia/PixelSorter",
+    "fileName": "flowersSorted.jpg",
+    "url": "/pixelSorter",
+    "longDesc": "A personal app that I made that takes an image file and sorts its pixels. It does two different sorts, one that sorts the image in to a gradient (Full image sort), and one that only sorts by row. Created just to see if it was possible. It was a very fun project that I sometimes go back to. It creates some really cool images! Now available as a service here on my website!"
+  },
+  "p7": {
+    "id": "recruiter",
+    "name": "Github Recruiter Tool",
+    "desc": "A tool made in Vue.js with Vuetify that uses the Github API",
+    "link": "https://github.com/djtobia/githubRecruiterTool",
+    "fileName": "recruiterTool.jpg",
+    "longDesc": "A fun little application I made that I built using vue.js and vuetify. It uses the Github API to search for different users.",
+    "url": "http://githubrecruitertool.com"
+  },
   "p2": {
     "id": "59877da27df2da2760bbb4a2",
     "name": "MirrorDesktop",
@@ -14,14 +32,6 @@
     "link": "https://github.com/djtobia/MirrorDesktop",
     "fileName": "mirrorImage.png",
     "longDesc": "A personal app that I made that uses your webcam to turn your desktop into an updating mirror image. Uses a java library found on github (link to library found in github repository). Created a java UI using java swing."
-  },
-  "p3": {
-    "id": "59877e007df2da2760bbb4a5",
-    "name": "bf1Stats",
-    "desc": "A small app to track your stats on Battlefield 1 (in progress)",
-    "link": "https://github.com/djtobia/bf1Stats",
-    "fileName": "",
-    "longDesc": "I started this app during my internship at American Express. I was working heavily on a web app, and wanted to make a simple one of my own. At the time I was playing Battlefield 1 pretty often with a friend of mine, and wanted to see if I could possible make an app so we could track our stats. Work became a little overwhelming and I didn't have much time to finish the app, so it has been put on the shelf for the time being. I really want to continue working on it, and will do so as soon as possible. Uses AngularJS for the front end, Node.js with Express for the backend. It connects to the battlefield tracker api to get information about a user."
   },
   "p4": {
     "id": "59877e157df2da2760bbb4a6",
@@ -39,12 +49,13 @@
     "fileName": "",
     "longDesc": "This app is meant to be silly. It has different buttons that play different sound files. I wanted to finish this for my brother as a Christmas present, but finals took too much of my time away to be able to finish it. It is on the back burner right now as I continue my job search."
   },
-  "p6": {
-    "id": "59877dc77df2da2760bbb4a4",
-    "name": "Pixel Sorter",
-    "desc": "An image modifier",
-    "link": "https://github.com/djtobia/PixelSorter",
-    "fileName": "flowersSorted.jpg",
-    "longDesc": "A personal app that I made that takes an image file and sorts its pixels. It does two different sorts, one that sorts the image in to a gradient (Full image sort), and one that only sorts by row. Created just to see if it was possible. It was a very fun project that I sometimes go back to. It creates some really cool images! Now available as a service here on my website!"
+
+  "p3": {
+    "id": "59877e007df2da2760bbb4a5",
+    "name": "bf1Stats",
+    "desc": "A small app to track your stats on Battlefield 1 (in progress)",
+    "link": "https://github.com/djtobia/bf1Stats",
+    "fileName": "",
+    "longDesc": "I started this app during my internship at American Express. I was working heavily on a web app, and wanted to make a simple one of my own. At the time I was playing Battlefield 1 pretty often with a friend of mine, and wanted to see if I could possible make an app so we could track our stats. Work became a little overwhelming and I didn't have much time to finish the app, so it has been put on the shelf for the time being. I really want to continue working on it, and will do so as soon as possible. Uses AngularJS for the front end, Node.js with Express for the backend. It connects to the battlefield tracker api to get information about a user."
   }
 }

@@ -5,14 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="015be552-4d96-46e4-b38c-30ad7aafcf38" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/projects.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/recruiterTool.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/projectRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/projectRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/contact.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/userApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/PixelSorterRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/PixelSorterRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/adminRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/authRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/signInRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/about.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/about.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/accessDenied.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/accessDenied.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/contact.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/contact.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/error.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/error.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/extras.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/extras.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/insertProject.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/login.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/logout.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/mustUploadFile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/mustUploadFile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pixelSorter.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pixelSorter.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/pixelSorterView.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/pixelSorterView.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/projectView.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/projectView.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/projects.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/projects.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/updatedProjects.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/updatedResume.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/utilities.ejs" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,18 +92,18 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Dylan\Documents\Website\public\jars" />
-      <recent name="D:\Dylan\Documents\Website\public\resume" />
-      <recent name="D:\Dylan\Documents\Website\public\lib\jquery\dist" />
-      <recent name="D:\Dylan\Documents\Website\public" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Dylan\Documents\Website\public\images" />
       <recent name="D:\Dylan\Documents\Website\public\img" />
       <recent name="D:\Dylan\Documents\Website\public" />
       <recent name="D:\Dylan\Documents\Website\src" />
       <recent name="D:\Dylan\Documents\Website\src\views" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Dylan\Documents\Website\public\jars" />
+      <recent name="D:\Dylan\Documents\Website\public\resume" />
+      <recent name="D:\Dylan\Documents\Website\public\lib\jquery\dist" />
+      <recent name="D:\Dylan\Documents\Website\public" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,7 +167,7 @@
       <workItem from="1556678918990" duration="42000" />
       <workItem from="1603686608453" duration="1049000" />
       <workItem from="1603687769255" duration="48000" />
-      <workItem from="1603688307151" duration="3040000" />
+      <workItem from="1603688307151" duration="4598000" />
     </task>
     <servers />
   </component>
@@ -177,10 +196,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="978" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603690921754">
+    <state x="978" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603691644280">
       <screen x="0" y="0" width="2497" height="1080" />
     </state>
-    <state x="978" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2497.1080/-2498.0.2498.1080@0.0.2497.1080" timestamp="1603690921754" />
+    <state x="978" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2497.1080/-2498.0.2498.1080@0.0.2497.1080" timestamp="1603691644280" />
     <state x="1066" y="454" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603688570541">
       <screen x="0" y="0" width="2497" height="1080" />
     </state>

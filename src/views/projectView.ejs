@@ -70,6 +70,9 @@
                 <a href="<%= project.link %>" target="_blank">Github Repository</a><br/><br />
                 <img class="<%= project.fileName ? "projectImage" : "noImage" %>"
                      src="<%= "/images/"+project.fileName %>"/><br/>
+                <% if(project.url) { %>
+                <a href="<%= project.url %>" target="_blank">View the App here!</a>
+                <% } %>
             </div><!-- col-lg-8 -->
         </div><!-- row -->
     </div><!-- container -->
@@ -92,7 +95,6 @@
 <script src="/js/insertProjectApp.js"></script>
 <script src="/js/main.js"></script>
 <script src="/js/smoothscroll.js"></script>
-<script src="/js/userApp.js"></script>
 <!--endinject-->
 
 
