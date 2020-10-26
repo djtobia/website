@@ -1,34 +1,45 @@
 var express = require('express');
-var mongodb = require('mongodb').MongoClient;
-var ObjectId = require('mongodb').ObjectID;
 var router = express.Router();
-
+const fs = require('fs');
 
 router.route('/')
     .get(function (req, res) {
-        var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
-        mongodb.connect(url, function (err, db) {
-            var collection = db.collection('projects');
 
-            collection.find({}).toArray(function (err, results) {
-                res.render('projects',{projects: results});
-            });
+        fs.readFile('./projects.json', 'utf8', (err, jsonString) => {
+            if(err){
+                console.log('ya fucked it dylan');
+                return;
+            }
+            jsonProjects = JSON.parse(jsonString);
+            let projects = [];
+            let images = [];
+            for(const [index,project] of Object.entries(jsonProjects)) {
+                projects.push(project);
+                if(images.length < 3){
+                    images.push(project.fileName ? `<img class="projectImage" src="/images/${project.fileName} />` : '<div class="imageBuffer"></div>');
+                }
+            }
+            res.render('projects', {projects: projects});
         });
+
     });
 
 router.route('/:id')
     .get(function (req, res) {
-        var id = new ObjectId(req.params.id);
-        var url = 'mongodb://djtobia:travian123@ds161041.mlab.com:61041/website';
-        mongodb.connect(url, function (err, db) {
-            var collection = db.collection('projects');
+        var id = req.params.id
+        //fetch the json, then parse it, and find id with $oid that matches
+        fs.readFile('./projects.json', 'utf8', (err, jsonString) => {
+            if (err) {
+                console.log('ya fucked it dylan');
+                return;
+            }
+            jsonProjects = JSON.parse(jsonString);
 
-            collection.findOne({_id : id},function (err, results) {
-                if(results.name == "Pixel Sorter") {
-                    res.render('pixelSorterView', {project: results});
-                }else
-                res.render('projectView',{project: results});
-            });
+            for (const [index, project] of Object.entries(jsonProjects)) {
+                if(project.id === id) {
+                    res.render('projectView', {project: project});
+                }
+            }
         });
     });
 
