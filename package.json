@@ -31,11 +31,11 @@
     "recaptcha-verify": "^0.1.1"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-inject": "^4.2.0",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
-    "gulp-nodemon": "^2.2.1",
+    "gulp-nodemon": "^2.5.0",
     "jshint": "^2.9.5",
     "jshint-stylish": "^2.2.1",
     "wiredep": "^4.0.0"
